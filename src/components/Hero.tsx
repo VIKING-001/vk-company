@@ -3,28 +3,30 @@ import logo from "../assets/logo.png";
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col justify-end px-[5vw] pb-[8vh] relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50/50">
-        <div className="absolute inset-0" style={{
-          background: 'radial-gradient(ellipse 60% 50% at 70% 40%, rgba(220,38,38,0.03) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(220,38,38,0.02) 0%, transparent 60%)'
-        }} />
+      {/* Background with Neon Glow */}
+      <div className="absolute inset-0 bg-[#020617]">
+        <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[100px]" />
       </div>
 
-      {/* Vertical lines */}
+      {/* Vertical lines with Neon Effect */}
       {[25, 50, 75].map((pos) => (
         <div
           key={pos}
-          className="absolute top-0 bottom-0 w-px opacity-50"
+          className="absolute top-0 bottom-0 w-px opacity-20"
           style={{
             left: `${pos}%`,
-            background: 'linear-gradient(180deg, transparent, hsl(var(--border)) 30%, hsl(var(--border)) 70%, transparent)',
+            background: 'linear-gradient(180deg, transparent, var(--primary) 30%, var(--primary) 70%, transparent)',
+            boxShadow: '0 0 15px var(--primary)',
           }}
         />
       ))}
 
       {/* Content */}
       <div className="relative">
-        <img src={logo} alt="VK Company Logo" className="h-[60px] md:h-[80px] w-auto object-contain mb-8 animate-fade-up" />
+        <div className="bg-white/10 backdrop-blur-xl border border-white/10 p-5 rounded-[2rem] w-fit mb-10 animate-fade-up shadow-2xl">
+          <img src={logo} alt="VK Company Logo" className="h-[60px] md:h-[80px] w-auto object-contain" />
+        </div>
         <p className="text-[0.72rem] tracking-[0.22em] uppercase text-primary mb-6 animate-fade-up flex items-center gap-3">
           <span className="w-8 h-px bg-primary inline-block" />
           Agência Digital Estratégica

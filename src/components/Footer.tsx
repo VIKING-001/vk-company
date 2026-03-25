@@ -4,9 +4,9 @@ const Footer = () => {
   console.log("Footer rendering with logo:", logo);
   
   return (
-    <footer className="border-t border-border px-[5vw] py-10 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <div className="flex items-center">
-        <img src={logo} alt="VK Company Logo" className="h-[45px] w-auto object-contain opacity-90 block" />
+    <footer className="border-t border-white/5 px-[5vw] py-12 flex flex-col sm:flex-row justify-between items-center gap-8 bg-background/40 backdrop-blur-xl">
+      <div className="flex items-center bg-white/5 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/10">
+        <img src={logo} alt="VK Company Logo" className="h-[35px] w-auto object-contain opacity-100" />
       </div>
       <p className="text-[0.75rem] text-border tracking-[0.05em]">
         © 2025 VK Company. Todos os direitos reservados.

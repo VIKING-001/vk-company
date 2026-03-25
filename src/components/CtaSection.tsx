@@ -16,7 +16,7 @@ const CtaSection = () => {
   return (
     <section className="px-[5vw] py-[12vh] border-t border-border text-center relative overflow-hidden">
       <div className="absolute inset-0" style={{
-        background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(220,38,38,0.04) 0%, transparent 70%)'
+        background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(199,210,254,0.03) 0%, transparent 70%)'
       }} />
 
       <div ref={ref} className="reveal relative">
