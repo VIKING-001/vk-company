@@ -4,9 +4,9 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col justify-end px-[5vw] pb-[8vh] relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background to-[#0d0d0d]">
+      <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50/50">
         <div className="absolute inset-0" style={{
-          background: 'radial-gradient(ellipse 60% 50% at 70% 40%, rgba(201,162,77,0.08) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,162,77,0.04) 0%, transparent 60%)'
+          background: 'radial-gradient(ellipse 60% 50% at 70% 40%, rgba(220,38,38,0.03) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(220,38,38,0.02) 0%, transparent 60%)'
         }} />
       </div>
 
