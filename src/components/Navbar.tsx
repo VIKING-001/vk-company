@@ -1,9 +1,19 @@
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
+
 const Navbar = () => {
+  console.log("Navbar rendering with logo:", logo);
+  
   return (
     <nav className="fixed top-0 left-0 right-0 z-[900] flex items-center justify-between px-[5vw] py-5 bg-background/85 backdrop-blur-xl border-b border-border">
-      <div className="font-display text-[1.6rem] tracking-[0.12em] text-foreground">
-        VK<span className="text-primary">.</span>COMPANY
-      </div>
+      <Link to="/" className="flex items-center transition-opacity hover:opacity-80">
+        <img 
+          src={logo} 
+          alt="VK Company Logo" 
+          className="h-[45px] md:h-[55px] w-auto object-contain block" 
+          style={{ minWidth: '100px' }}
+        />
+      </Link>
       <a
         href="https://wa.me/5500000000000"
         target="_blank"

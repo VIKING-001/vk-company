@@ -1,3 +1,5 @@
+import logo from "../assets/logo.png";
+
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col justify-end px-[5vw] pb-[8vh] relative overflow-hidden">
@@ -22,6 +24,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative">
+        <img src={logo} alt="VK Company Logo" className="h-[60px] md:h-[80px] w-auto object-contain mb-8 animate-fade-up" />
         <p className="text-[0.72rem] tracking-[0.22em] uppercase text-primary mb-6 animate-fade-up flex items-center gap-3">
           <span className="w-8 h-px bg-primary inline-block" />
           Agência Digital Estratégica
