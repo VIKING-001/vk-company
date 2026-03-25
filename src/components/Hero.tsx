@@ -24,8 +24,13 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative">
-        <div className="bg-white/10 backdrop-blur-xl border border-white/10 p-5 rounded-[2rem] w-fit mb-10 animate-fade-up shadow-2xl">
-          <img src={logo} alt="VK Company Logo" className="h-[60px] md:h-[80px] w-auto object-contain" />
+        <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-[2.5rem] w-fit mb-12 animate-fade-up shadow-[0_0_30px_rgba(56,189,248,0.25)] relative group">
+           <div className="absolute inset-0 bg-primary/20 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-40 transition-opacity" />
+           <img 
+            src={logo} 
+            alt="VK Company Logo" 
+            className="h-[60px] md:h-[80px] w-auto object-contain relative z-10 filter drop-shadow-[0_0_12px_rgba(56,189,248,0.7)]" 
+          />
         </div>
         <p className="text-[0.72rem] tracking-[0.22em] uppercase text-primary mb-6 animate-fade-up flex items-center gap-3">
           <span className="w-8 h-px bg-primary inline-block" />
