@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png";
-import fotoHero from "../assets/foto-hero.jpg";
+import fotoHero from "../assets/foto-perfil.jpg";
 
 const Hero = () => {
   return (
@@ -67,15 +67,35 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Side: Founder Photo */}
-        <div className="hidden lg:block w-[400px] xl:w-[480px] h-[550px] xl:h-[650px] relative animate-fade-up-2">
-           <div className="absolute -inset-4 border border-primary/20 rotate-1 translate-x-2 translate-y-2" />
-           <div className="absolute inset-0 bg-primary/10 -z-10 translate-x-4 translate-y-4" />
-           <img 
-            src={fotoHero} 
-            alt="Founder" 
-            className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700 shadow-2xl border border-white/5" 
-          />
+        {/* Right Side: Founder Photo with Neon Spotlight */}
+        <div className="hidden lg:block w-[420px] xl:w-[500px] h-[560px] xl:h-[680px] relative animate-fade-up-2 flex-shrink-0">
+          {/* Neon halo behind photo */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-0">
+            <div className="w-[120%] h-[120%] rounded-full" style={{
+              background: 'radial-gradient(ellipse at 50% 60%, rgba(254,196,17,0.45) 0%, rgba(254,196,17,0.2) 25%, rgba(254,196,17,0.08) 50%, transparent 70%)',
+              filter: 'blur(24px)',
+            }} />
+          </div>
+          {/* Animated pulsing outer glow */}
+          <div className="absolute inset-[-8%] rounded-full animate-pulse pointer-events-none -z-0" style={{
+            background: 'radial-gradient(ellipse at 50% 55%, rgba(254,196,17,0.15) 0%, transparent 65%)',
+            filter: 'blur(40px)',
+          }} />
+          {/* Photo – clipped to no border, sits on top of glows */}
+          <div className="absolute inset-0 z-10 overflow-hidden rounded-[2rem] shadow-[0_0_80px_rgba(254,196,17,0.15)]">
+            <img
+              src={fotoHero}
+              alt="Founder"
+              className="w-full h-full object-cover object-top"
+            />
+            {/* Inner gradient fade at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 h-[40%]" style={{
+              background: 'linear-gradient(to top, hsl(222 47% 2%) 0%, transparent 100%)'
+            }} />
+          </div>
+          {/* Decorative corner accent */}
+          <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b-2 border-r-2 border-primary/50 z-20" />
+          <div className="absolute -top-3 -left-3 w-16 h-16 border-t-2 border-l-2 border-primary/30 z-20" />
         </div>
       </div>
     </section>
