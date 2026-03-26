@@ -14,7 +14,7 @@ const CtaSection = () => {
   }, []);
 
   return (
-    <section className="px-[5vw] py-[15vh] border-t border-white/5 bg-[#0F0F10] text-center relative overflow-hidden">
+    <section className="px-[5vw] py-12 md:py-[12vh] border-t border-white/5 bg-background text-center relative overflow-hidden">
       <div className="absolute inset-0" style={{
         background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,162,77,0.02) 0%, transparent 70%)'
       }} />
