@@ -24,15 +24,15 @@ const Hero = () => {
       ))}
 
       {/* Content Container */}
-      <div className="relative flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-24">
+      <div className="relative flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-24">
         {/* Left Side: Copy */}
         <div className="flex-1">
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-[2.5rem] w-fit mb-12 animate-fade-up shadow-[0_0_40px_rgba(201,162,77,0.1)] relative group">
-             <div className="absolute inset-0 bg-primary/10 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-40 transition-opacity" />
+          <div className="w-fit mb-12 animate-fade-up relative group">
              <img 
               src={logo} 
               alt="VK Company Logo" 
-              className="h-[60px] md:h-[80px] w-auto object-contain relative z-10 filter drop-shadow-[0_0_12px_rgba(201,162,77,0.4)]" 
+              className="h-[80px] md:h-[100px] w-auto object-contain relative z-10" 
+              style={{ mixBlendMode: 'screen' }}
             />
           </div>
           <p className="text-[0.72rem] tracking-[0.22em] uppercase text-primary mb-6 animate-fade-up flex items-center gap-3">

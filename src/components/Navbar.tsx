@@ -6,11 +6,12 @@ const Navbar = () => {
   
   return (
     <nav className="fixed top-0 left-0 right-0 z-[900] flex items-center justify-between px-[5vw] py-4 bg-background/60 backdrop-blur-2xl border-b border-white/5">
-      <Link to="/" className="flex items-center transition-all hover:scale-105 active:scale-95 bg-white/5 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/10 shadow-[0_0_20px_rgba(56,189,248,0.15)]">
+      <Link to="/" className="flex items-center transition-all hover:scale-105 active:scale-95">
         <img 
           src={logo} 
           alt="VK Company Logo" 
-          className="h-[32px] md:h-[40px] w-auto object-contain block filter drop-shadow-[0_0_8px_rgba(56,189,248,0.6)] brightness-110" 
+          className="h-[40px] md:h-[48px] w-auto object-contain block" 
+          style={{ mixBlendMode: 'screen' }}
         />
       </Link>
       <a
