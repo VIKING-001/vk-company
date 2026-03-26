@@ -20,12 +20,12 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="px-[5vw] py-[10vh] border-t border-border">
+    <section className="px-[5vw] py-[15vh] border-t border-white/5 bg-[#0F0F10]">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-20 gap-4">
-        <div>
+        <div className="reveal">
           <p className="text-[0.68rem] tracking-[0.25em] uppercase text-primary mb-4">O que fazemos</p>
-          <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] tracking-[0.04em] leading-none">
-            Nossos<br /><span className="text-primary">Serviços</span>
+          <h2 className="font-display text-[clamp(4rem,7vw,6.5rem)] tracking-[0.02em] leading-[0.9]">
+            Nossos<br /><span className="text-primary italic">Serviços</span>
           </h2>
         </div>
       </div>
