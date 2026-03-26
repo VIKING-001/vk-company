@@ -14,7 +14,7 @@ const About = () => {
   }, []);
 
   return (
-    <section ref={ref} className="px-[5vw] py-[15vh] bg-[#0F0F10] relative overflow-hidden">
+    <section ref={ref} className="px-[5vw] py-[15vh] bg-background relative overflow-hidden border-t border-border">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
         <div className="reveal order-2 lg:order-1">
           <p className="text-[0.68rem] tracking-[0.25em] uppercase text-primary mb-6">Sobre o fundador</p>
@@ -44,8 +44,8 @@ const About = () => {
               className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100" 
             />
           </div>
-          <div className="absolute bottom-10 -left-10 bg-primary p-8 hidden xl:block shadow-2xl">
-            <div className="font-display text-4xl text-primary-foreground leading-none mb-1">VK</div>
+          <div className="absolute bottom-10 -left-6 bg-primary p-6 hidden xl:block shadow-2xl shadow-primary/30">
+            <div className="font-display text-2xl text-primary-foreground leading-none mb-1">Rodrigo Cabral</div>
             <div className="text-[0.6rem] tracking-[0.3em] uppercase text-primary-foreground/80">Founder & CEO</div>
           </div>
         </div>

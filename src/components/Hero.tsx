@@ -24,7 +24,7 @@ const Hero = () => {
       ))}
 
       {/* Content Container */}
-      <div className="relative flex flex-col lg:flex-row items-end justify-between gap-12 lg:gap-24">
+      <div className="relative flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-24">
         {/* Left Side: Copy */}
         <div className="flex-1">
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-[2.5rem] w-fit mb-12 animate-fade-up shadow-[0_0_40px_rgba(201,162,77,0.1)] relative group">
@@ -68,7 +68,7 @@ const Hero = () => {
         </div>
 
         {/* Right Side: Founder Photo with Neon Spotlight */}
-        <div className="hidden lg:block w-[420px] xl:w-[500px] h-[560px] xl:h-[680px] relative animate-fade-up-2 flex-shrink-0">
+        <div className="w-full max-w-[340px] mx-auto lg:max-w-none lg:w-[420px] xl:w-[500px] h-[400px] md:h-[480px] lg:h-[560px] xl:h-[680px] relative animate-fade-up-2 flex-shrink-0">
           {/* Neon halo behind photo */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-0">
             <div className="w-[120%] h-[120%] rounded-full" style={{
