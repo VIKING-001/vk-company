@@ -10,39 +10,55 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
+    let timeoutId: number;
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const delta = Math.abs(currentScrollY - lastScrollY);
       
+      // Ignore very small scrolls to prevent jitter
+      if (delta < 10) return;
+
       // Hide/Show logic
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      if (currentScrollY > lastScrollY && currentScrollY > 150) {
         setHidden(true);
       } else {
         setHidden(false);
       }
       
-      // Scrolled state logic for styling
-      setScrolled(currentScrollY > 20);
+      setScrolled(currentScrollY > 50);
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const throttledScroll = () => {
+      if (timeoutId) return;
+      timeoutId = window.setTimeout(() => {
+        handleScroll();
+        timeoutId = 0;
+      }, 50); // Throttle to 20fps for performance
+    };
+
+    window.addEventListener("scroll", throttledScroll);
+    return () => {
+      window.removeEventListener("scroll", throttledScroll);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, [lastScrollY]);
 
   return (
     <motion.nav
       variants={{
-        visible: { y: 0 },
-        hidden: { y: "-100%" },
+        visible: { y: 0, opacity: 1 },
+        hidden: { y: "-100%", opacity: 0 },
       }}
       animate={hidden ? "hidden" : "visible"}
-      transition={{ duration: 0.35, ease: "easeInOut" }}
-      className={`fixed top-0 left-0 right-0 z-[1000] flex items-center justify-between px-[5vw] transition-all duration-300 ${
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className={`fixed top-0 left-0 right-0 z-[1000] flex items-center justify-between px-[5vw] transition-all duration-500 will-change-transform ${
         scrolled 
           ? "py-3 bg-background/80 backdrop-blur-xl border-b border-white/10 shadow-lg" 
           : "py-6 bg-transparent border-b border-transparent"
       }`}
     >
+
       <Link 
         to="/" 
         className="flex items-center transition-all hover:opacity-80 active:scale-95 shrink-0"

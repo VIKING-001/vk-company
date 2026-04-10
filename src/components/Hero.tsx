@@ -11,33 +11,34 @@ const PhotoBlock = () => {
     offset: ["start end", "end start"]
   });
   
-  const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  // Subtle parallax only on desktop
+  const y = useTransform(scrollYProgress, [0, 1], [0, -40]);
 
   return (
     <motion.div 
       ref={containerRef}
-      initial={{ opacity: 0, scale: 0.95 }}
+      initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       className="w-full max-w-[340px] mx-auto lg:max-w-none lg:w-[420px] xl:w-[500px] h-[380px] md:h-[460px] lg:h-[560px] xl:h-[680px] relative flex-shrink-0"
     >
-      {/* Neon halo behind photo */}
+      {/* Halo - Reduced intensity for mobile performance */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
         <motion.div 
-          animate={{ opacity: [0.3, 0.5, 0.3], scale: [1, 1.1, 1] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-          className="w-[120%] h-[120%] rounded-full" 
+          animate={{ opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="w-[110%] h-[110%] rounded-full" 
           style={{
-            background: 'radial-gradient(ellipse at 50% 60%, rgba(254,196,17,0.45) 0%, rgba(254,196,17,0.2) 25%, rgba(254,196,17,0.08) 50%, transparent 70%)',
-            filter: 'blur(24px)',
+            background: 'radial-gradient(ellipse at 50% 60%, rgba(254,196,17,0.3) 0%, rgba(254,196,17,0.1) 30%, transparent 70%)',
+            filter: 'blur(30px)',
           }} 
         />
       </div>
       
-      {/* Photo with parallax */}
+      {/* Photo with responsive parallax */}
       <motion.div 
-        style={{ y }}
-        className="absolute inset-0 z-10 overflow-hidden rounded-[2rem] shadow-[0_0_80px_rgba(254,196,17,0.15)]"
+        className="absolute inset-0 z-10 overflow-hidden rounded-[1.5rem] lg:rounded-[2rem] shadow-[0_0_60px_rgba(254,196,17,0.1)] will-change-transform"
+        style={{ y: typeof window !== 'undefined' && window.innerWidth > 1024 ? y : 0 }}
       >
         <img
           src={fotoHero}
@@ -49,18 +50,18 @@ const PhotoBlock = () => {
         }} />
       </motion.div>
       
-      {/* Corner accents */}
+      {/* Corner accents - simpler transitions */}
       <motion.div 
-        initial={{ opacity: 0, x: 20, y: 20 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute -bottom-3 -right-3 w-16 h-16 border-b-2 border-r-2 border-primary/50 z-20" 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8 }}
+        className="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-primary/40 z-20" 
       />
       <motion.div 
-        initial={{ opacity: 0, x: -20, y: -20 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ delay: 1.2, duration: 1 }}
-        className="absolute -top-3 -left-3 w-16 h-16 border-t-2 border-l-2 border-primary/30 z-20" 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.9 }}
+        className="absolute -top-2 -left-2 w-12 h-12 border-t-2 border-l-2 border-primary/20 z-20" 
       />
     </motion.div>
   );
