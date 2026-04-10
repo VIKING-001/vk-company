@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import fotoPerfil from "../assets/foto-hero.jpg";
+import fotoPerfil from "../assets/foto-fundador.jpg";
 
 const About = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -16,7 +16,22 @@ const About = () => {
   return (
     <section ref={ref} className="px-[5vw] py-12 md:py-[12vh] bg-background relative overflow-hidden border-t border-border">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
-        <div className="reveal order-2 lg:order-1">
+        <div className="reveal order-1 lg:order-1 relative group">
+          <div className="absolute -inset-4 border border-primary/10 rotate-2 -z-10 group-hover:rotate-0 transition-transform duration-700" />
+          <div className="aspect-[4/5] overflow-hidden shadow-2xl">
+            <img 
+              src={fotoPerfil} 
+              alt="Perfil Fundador" 
+              className="w-full h-full object-cover object-top grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100" 
+            />
+          </div>
+          <div className="absolute bottom-6 -right-4 xl:-right-6 bg-primary p-4 xl:p-6 hidden sm:block shadow-2xl shadow-primary/30">
+            <div className="font-display text-base xl:text-2xl text-primary-foreground leading-none mb-1">Rodrigo Cabral</div>
+            <div className="text-[0.55rem] tracking-[0.25em] uppercase text-primary-foreground/80">Founder & CEO</div>
+          </div>
+        </div>
+
+        <div className="reveal order-2 lg:order-2">
           <p className="text-[0.68rem] tracking-[0.25em] uppercase text-primary mb-6">Sobre o fundador</p>
           <h2 className="font-display text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[1.1] mb-8">
             Estratégia que<br /> 
@@ -32,21 +47,6 @@ const About = () => {
             <p className="border-l-2 border-primary pl-6 py-2 italic text-white">
               "Nosso objetivo não é apenas entregar um serviço, mas sim construir o próximo grande case do seu setor."
             </p>
-          </div>
-        </div>
-
-        <div className="reveal order-1 lg:order-2 relative group">
-          <div className="absolute -inset-4 border border-primary/10 -rotate-2 -z-10 group-hover:rotate-0 transition-transform duration-700" />
-          <div className="aspect-[4/5] overflow-hidden shadow-2xl">
-            <img 
-              src={fotoPerfil} 
-              alt="Perfil Fundador" 
-              className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100" 
-            />
-          </div>
-          <div className="absolute bottom-6 -left-4 xl:-left-6 bg-primary p-4 xl:p-6 hidden sm:block shadow-2xl shadow-primary/30">
-            <div className="font-display text-base xl:text-2xl text-primary-foreground leading-none mb-1">Rodrigo Cabral</div>
-            <div className="text-[0.55rem] tracking-[0.25em] uppercase text-primary-foreground/80">Founder & CEO</div>
           </div>
         </div>
       </div>

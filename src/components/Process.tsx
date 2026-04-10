@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import fotoTrabalho from "../assets/foto-trabalho.jpg";
+
 
 const steps = [
   { num: "01", title: "Diagnóstico", desc: "Entendemos seu negócio por completo — cenário atual, concorrência, público e objetivos reais." },
@@ -29,16 +29,6 @@ const Process = () => {
           <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] tracking-[0.02em] leading-[0.9]">
             Nosso<br /><span className="text-primary italic">Processo</span>
           </h2>
-        </div>
-        {/* Work photo — shown on tablet+ only */}
-        <div className="reveal hidden md:block w-full max-w-[380px] h-[200px] lg:h-[240px] relative group overflow-hidden rounded-xl">
-          <div className="absolute inset-0 bg-primary/10 z-10 group-hover:bg-transparent transition-colors duration-500" />
-          <img
-            src={fotoTrabalho}
-            alt="Processo VK"
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100"
-          />
-          <div className="absolute inset-0 border border-primary/20 pointer-events-none shadow-[inset_0_0_60px_rgba(5,5,20,0.7)] rounded-xl" />
         </div>
       </div>
 
