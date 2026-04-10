@@ -6,20 +6,34 @@ import CaseSection from "@/components/CaseSection";
 import Process from "@/components/Process";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const Index = () => {
   return (
-    <>
+    <main className="relative">
       <Hero />
-      <Manifesto />
-      <About />
-      <Services />
-      <CaseSection />
-      <Process />
-      <CtaSection />
+      <ScrollReveal>
+        <Manifesto />
+      </ScrollReveal>
+      <ScrollReveal>
+        <About />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Services />
+      </ScrollReveal>
+      <ScrollReveal>
+        <CaseSection />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Process />
+      </ScrollReveal>
+      <ScrollReveal>
+        <CtaSection />
+      </ScrollReveal>
       <Footer />
-    </>
+    </main>
   );
 };
 
 export default Index;
+
