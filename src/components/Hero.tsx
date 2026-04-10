@@ -1,5 +1,6 @@
 import logo from "../assets/logo.png";
 import fotoHero from "../assets/foto-perfil.jpg";
+import { WHATSAPP_LINK } from "../lib/constants";
 
 const PhotoBlock = () => (
   <div className="w-full max-w-[340px] mx-auto lg:max-w-none lg:w-[420px] xl:w-[500px] h-[380px] md:h-[460px] lg:h-[560px] xl:h-[680px] relative flex-shrink-0">
@@ -95,7 +96,7 @@ const Hero = () => {
 
           <div className="flex flex-wrap items-center gap-8 mt-12 animate-fade-up-3">
             <a
-              href="https://wa.me/5500000000000"
+              href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 bg-primary text-primary-foreground font-bold text-[0.82rem] tracking-[0.14em] uppercase px-10 py-5 hover:bg-primary-light hover:scale-105 transition-all shadow-[0_10px_40px_rgba(201,162,77,0.2)]"

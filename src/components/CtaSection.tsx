@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { WHATSAPP_LINK } from "../lib/constants";
 
 const CtaSection = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -30,7 +31,7 @@ const CtaSection = () => {
           Uma conversa no WhatsApp é suficiente para entender se faz sentido trabalharmos juntos. Sem enrolação.
         </p>
         <a
-          href="https://wa.me/5500000000000"
+          href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-primary text-primary-foreground font-bold text-[0.85rem] tracking-[0.14em] uppercase px-11 py-5 hover:bg-primary-light hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(201,162,77,0.35)] transition-all"

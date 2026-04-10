@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import { WHATSAPP_LINK } from "../lib/constants";
 
 const Navbar = () => {
   console.log("Navbar rendering with logo:", logo);
@@ -15,7 +16,7 @@ const Navbar = () => {
         />
       </Link>
       <a
-        href="https://wa.me/5500000000000"
+        href={WHATSAPP_LINK}
         target="_blank"
         rel="noopener noreferrer"
         className="bg-primary text-primary-foreground font-body font-bold text-[0.78rem] tracking-[0.12em] uppercase px-5 py-2.5 hover:bg-primary-light transition-colors"
