@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, ReactNode } from "react";
+import { useRef, useMemo, ReactNode } from "react";
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -8,43 +8,37 @@ interface ScrollRevealProps {
   direction?: "up" | "down" | "left" | "right";
 }
 
-const ScrollReveal = ({ children, width = "100%", delay = 0.1, direction = "up" }: ScrollRevealProps) => {
+const ScrollReveal = ({ children, width = "100%", delay = 0, direction = "up" }: ScrollRevealProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-  const offset = isMobile ? 20 : 40;
+  const offset = useMemo(() => {
+    if (typeof window === "undefined") return 30;
+    return window.innerWidth < 768 ? 20 : 30;
+  }, []);
 
-  const variants = {
-    hidden: {
-      opacity: 0,
-      y: direction === "up" ? offset : direction === "down" ? -offset : 0,
-      x: direction === "left" ? offset : direction === "right" ? -offset : 0,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      x: 0,
-    },
-  };
+  const initial = useMemo(() => ({
+    opacity: 0,
+    y: direction === "up" ? offset : direction === "down" ? -offset : 0,
+    x: direction === "left" ? offset : direction === "right" ? -offset : 0,
+  }), [direction, offset]);
 
   return (
-    <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
+    <div ref={ref} style={{ position: "relative", width }}>
       <motion.div
-        variants={variants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        transition={{ 
-          duration: isMobile ? 0.6 : 0.8, 
-          delay: isMobile ? delay * 0.5 : delay, 
-          ease: [0.16, 1, 0.3, 1] 
+        initial={initial}
+        animate={isInView ? { opacity: 1, y: 0, x: 0 } : initial}
+        transition={{
+          duration: 0.6,
+          ease: [0.25, 0.1, 0.25, 1],
+          delay,
         }}
+        style={{ willChange: "transform, opacity" }}
       >
         {children}
       </motion.div>
     </div>
   );
 };
-
 
 export default ScrollReveal;
