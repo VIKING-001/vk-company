@@ -1,10 +1,26 @@
 import { motion } from "framer-motion";
 
 const steps = [
-  { num: "01", title: "Diagnóstico", desc: "Entendemos seu negócio por completo — cenário atual, concorrência, público e objetivos reais." },
-  { num: "02", title: "Estratégia", desc: "Mapeamos os pontos de alavancagem e definimos o plano de ação com prioridades claras." },
-  { num: "03", title: "Execução", desc: "Desenvolvemos e implementamos tudo com velocidade e qualidade de nível premium." },
-  { num: "04", title: "Escala", desc: "Monitoramos, otimizamos e escalamos o que funciona — de forma contínua e mensurável." },
+  {
+    num: "01",
+    title: "Diagnóstico",
+    desc: "Antes de qualquer proposta, a gente faz as perguntas incômodas: o que você vendeu nos últimos 90 dias, para quem e por que alguns clientes somem.",
+  },
+  {
+    num: "02",
+    title: "Estratégia",
+    desc: "Com os dados na mão, montamos um plano real — não um deck de apresentação bonito que vai pro fundo da gaveta.",
+  },
+  {
+    num: "03",
+    title: "Execução",
+    desc: "Entrega rápida, mas sem atropelamento. Cada entrega passa por revisão interna antes de chegar em você.",
+  },
+  {
+    num: "04",
+    title: "Escala",
+    desc: "Toda campanha e entrega tem número. Se o número não está bom, a gente ajusta. Se está bom, a gente intensifica.",
+  },
 ];
 
 const containerVariants = {
@@ -40,9 +56,9 @@ const Process = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-[0.88rem] text-white/40 max-w-[300px] leading-relaxed hidden lg:block"
+          className="text-[0.88rem] text-white/40 max-w-[280px] leading-relaxed hidden lg:block"
         >
-          Cada etapa foi desenhada para eliminar desperdício e maximizar resultado.
+          Cada etapa existe pra eliminar desperdício — de verba, de tempo e de expectativa.
         </motion.p>
       </div>
 
@@ -52,7 +68,7 @@ const Process = () => {
         whileInView="visible"
         viewport={{ once: true, margin: "-60px" }}
         aria-label="Etapas do processo"
-        className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border"
       >
         {steps.map((s, i) => (
           <motion.li
@@ -60,18 +76,10 @@ const Process = () => {
             variants={itemVariants}
             className="group bg-secondary hover:bg-card transition-colors duration-300 p-8 lg:p-10 relative overflow-hidden flex flex-col gap-5"
           >
-            {/* Hover top line */}
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-            {/* Step badge */}
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 border border-border rounded-full flex items-center justify-center font-display text-base text-primary bg-background group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 flex-shrink-0 relative z-10">
-                {s.num}
-              </div>
-              {/* connector line — only on desktop between steps */}
-              {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute right-0 top-[2.75rem] w-px h-px" aria-hidden="true" />
-              )}
+            <div className="w-12 h-12 border border-border rounded-full flex items-center justify-center font-display text-base text-primary bg-background group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 flex-shrink-0">
+              {s.num}
             </div>
 
             <div>
@@ -84,7 +92,6 @@ const Process = () => {
               </p>
             </div>
 
-            {/* Bottom number watermark */}
             <div
               className="font-display text-[4rem] leading-none text-white/3 group-hover:text-primary/6 transition-colors duration-300 select-none mt-auto self-end"
               aria-hidden="true"
@@ -94,19 +101,6 @@ const Process = () => {
           </motion.li>
         ))}
       </motion.ol>
-
-      {/* Desktop connecting line */}
-      <div className="hidden lg:block relative -mt-px">
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-          style={{ originX: 0 }}
-          className="h-px bg-gradient-to-r from-primary/30 via-primary/10 to-transparent"
-          aria-hidden="true"
-        />
-      </div>
     </section>
   );
 };

@@ -16,7 +16,7 @@ const Manifesto = () => {
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         className="text-[clamp(1.3rem,2.5vw,1.9rem)] font-light leading-[1.6] text-foreground"
       >
-        A maioria das agências aperta botões. Nós entramos no seu negócio, entendemos o cenário real, identificamos os pontos de alavancagem e entregamos soluções que <strong className="font-bold text-primary">somam</strong>. Não vendemos serviços isolados — vendemos <strong className="font-bold text-primary">transformação de negócio</strong>.
+        A maioria das agências te manda relatório cheio de gráfico e fica esperando você renovar o contrato. A VK Company entra diferente: a gente estuda seu setor, mapeia onde o dinheiro está vazando e <strong className="font-bold text-primary">só propõe o que faz sentido pro seu caso</strong>. Não tem pacote. Tem <strong className="font-bold text-primary">estratégia feita do zero</strong>.
       </motion.div>
     </section>
   );

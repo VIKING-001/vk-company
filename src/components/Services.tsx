@@ -6,28 +6,28 @@ const services = [
     num: "01",
     icon: Target,
     name: "Assessoria Estratégica",
-    desc: "Diagnóstico completo do seu negócio digital. Identificamos gargalos, oportunidades e traçamos um plano claro de ação para escalar.",
+    desc: "Antes de mexer em qualquer coisa, a gente entende onde você está. O que funciona, o que está sugando verba e o que você ainda não testou. Aí sim, traçamos o caminho.",
     tags: ["Diagnóstico", "Plano de Ação", "KPIs"],
   },
   {
     num: "02",
     icon: Globe,
     name: "Sites & Landing Pages",
-    desc: "Páginas de alta conversão com design premium. Do briefing ao ar em tempo recorde, focando em resultado e não só em estética.",
+    desc: "Seu site não é cartão de visita, é um vendedor 24 horas. Criamos páginas com propósito: converter visitante em cliente — não ganhar prêmio de design.",
     tags: ["Alta Conversão", "Design Premium", "Performance"],
   },
   {
     num: "03",
     icon: BarChart2,
     name: "Tráfego Pago",
-    desc: "Campanhas no Meta Ads e Google Ads gerenciadas com foco em ROI real. Cada real investido rastreado e otimizado.",
+    desc: "Meta e Google não perdoam verba jogada fora. Configuramos, acompanhamos e ajustamos campanha toda semana — não só no relatório mensal.",
     tags: ["Meta Ads", "Google Ads", "ROI Real"],
   },
   {
     num: "04",
     icon: Palette,
     name: "Identidade Visual & Branding",
-    desc: "Marcas que comunicam autoridade antes de qualquer palavra. Logo, paleta, tipografia e guia de estilo completo.",
+    desc: "Quando a marca é fraca, qualquer texto fica fraco. Construímos identidades que já comunicam antes do cliente ler uma linha.",
     tags: ["Logo", "Paleta", "Guia de Estilo"],
   },
 ];
@@ -78,22 +78,13 @@ const Services = () => {
               variants={itemVariants}
               className="group bg-secondary p-8 lg:p-10 relative overflow-hidden hover:bg-card transition-colors duration-300 flex flex-col"
             >
-              {/* Bottom border reveal */}
               <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500" />
-
-              {/* Top glow on hover */}
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              {/* Icon */}
               <div className="mb-6 w-11 h-11 border border-white/8 flex items-center justify-center group-hover:border-primary/30 group-hover:bg-primary/5 transition-all duration-300">
-                <Icon
-                  size={18}
-                  className="text-white/40 group-hover:text-primary transition-colors duration-300"
-                  strokeWidth={1.5}
-                />
+                <Icon size={18} className="text-white/40 group-hover:text-primary transition-colors duration-300" strokeWidth={1.5} />
               </div>
 
-              {/* Number */}
               <div className="font-display text-[3rem] text-border leading-none mb-5 group-hover:text-primary/12 transition-colors duration-300 select-none" aria-hidden="true">
                 {s.num}
               </div>
@@ -105,7 +96,6 @@ const Services = () => {
                 {s.desc}
               </p>
 
-              {/* Tags */}
               <div className="flex flex-wrap gap-1.5 mt-6">
                 {s.tags.map((tag) => (
                   <span

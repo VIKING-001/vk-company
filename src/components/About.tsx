@@ -55,10 +55,10 @@ const About = () => {
           </h2>
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-white/70 font-light">
             <p>
-              A VK Company foi fundada com uma missão clara: elevar o padrão do mercado digital. Não acreditamos em fórmulas prontas ou automações genéricas.
+              Trabalhei anos vendo negócios locais perderem clientes por estratégia digital ruim. Não por falta de produto — por falta de direção. Fundei a VK Company porque sabia que dava pra fazer diferente.
             </p>
             <p>
-              Cada projeto que assumimos passa por um olhar crítico e estratégico, focado em criar um posicionamento de marca sólido e funis de vendas que convertem de verdade.
+              Cada cliente que a gente assume passa por uma conversa honesta primeiro. Se não enxergarmos onde podemos ajudar de verdade, falamos isso antes de qualquer proposta.
             </p>
             <motion.blockquote
               initial={{ opacity: 0, y: 15 }}
@@ -67,7 +67,7 @@ const About = () => {
               transition={{ delay: 0.4, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
               className="border-l-2 border-primary pl-6 py-2 italic text-white"
             >
-              "Nosso objetivo não é apenas entregar um serviço, mas sim construir o próximo grande case do seu setor."
+              "Não me interessa ter uma carteira grande de clientes. Me interessa ter uma carteira de clientes que cresceram."
             </motion.blockquote>
           </div>
         </motion.div>

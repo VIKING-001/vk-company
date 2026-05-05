@@ -135,7 +135,7 @@ const Hero = () => {
             {...fadeUp(0.55)}
             className="max-w-[500px] mt-8 text-[1rem] font-light leading-[1.8] text-white/70"
           >
-            A VK Company não executa tarefas — ela transforma negócios. Entramos como parceiros estratégicos, diagnosticamos o cenário completo e entregamos soluções que realmente alavancam seus resultados.
+            A maioria das agências entrega layout. A gente estuda o seu mercado, entende onde você está perdendo dinheiro e monta o que vai fazer seu próximo mês ser melhor que o atual.
           </motion.p>
 
           <motion.div

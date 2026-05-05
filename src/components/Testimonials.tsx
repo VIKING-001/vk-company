@@ -2,22 +2,22 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    quote: "A VK Company transformou completamente nossa presença digital. Em 90 dias triplicamos nossas vendas online — estratégia real, sem enrolação.",
-    name: "Marcos Henrique",
-    role: "CEO, Construtora MH",
-    initials: "MH",
+    quote: "Eu desconfiava bastante no começo — já tinha queimado dinheiro com outra agência antes. Mas o Rodrigo chegou com dados do meu setor e perguntou coisas que o último fornecedor nunca perguntou. Em 60 dias meu custo de captação caiu quase na metade. Renovei sem pensar.",
+    name: "João Alves",
+    role: "Clínica Dr. Alves — Goiânia",
+    initials: "JA",
   },
   {
-    quote: "O site entregue foi além das expectativas. Design premium, rápido e convertendo de verdade. Já recuperei o investimento na primeira semana.",
-    name: "Ana Paula Souza",
-    role: "Proprietária, Clínica Estética AP",
-    initials: "AP",
+    quote: "Meu site tinha 3 anos e eu achava que o problema era o produto. A VK refez a landing page e em duas semanas a taxa de conversão triplicou. Parece mentira mas tenho o print aqui.",
+    name: "Mariana Gomes",
+    role: "Loja Deitada no Sol — São Paulo",
+    initials: "MG",
   },
   {
-    quote: "Gestão de tráfego séria com resultados reais. Meu custo por lead caiu 60% e o faturamento subiu 40% em dois meses.",
-    name: "Ricardo Fernandes",
-    role: "Sócio, RF Advocacia",
-    initials: "RF",
+    quote: "Passei 8 meses tentando fazer Google Ads funcionar sozinho. Em 30 dias com eles já estava lucrando. O que me chamou atenção foi que eles me ligaram pra pedir uma informação do setor antes de começar. Aí eu soube que estavam fazendo sério.",
+    name: "Pedro Carvalho",
+    role: "PC Reformas — Brasília",
+    initials: "PC",
   },
 ];
 
@@ -48,8 +48,8 @@ const Testimonials = () => {
           O que dizem sobre nós
         </p>
         <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] tracking-[0.02em] leading-[0.9]">
-          Resultados<br />
-          <span className="text-primary italic">Reais.</span>
+          Quem já<br />
+          <span className="text-primary italic">passou por aqui.</span>
         </h2>
       </motion.div>
 
@@ -64,34 +64,26 @@ const Testimonials = () => {
           <motion.div
             key={i}
             variants={itemVariants}
-            className="group relative bg-secondary p-8 lg:p-10 hover:bg-card transition-colors duration-300 overflow-hidden"
+            className="group relative bg-secondary p-8 lg:p-10 hover:bg-card transition-colors duration-300 overflow-hidden flex flex-col"
           >
-            {/* Top accent line */}
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
-            {/* Quote mark */}
-            <div
-              className="font-display text-[5rem] leading-none text-primary/10 mb-2 -mt-4 select-none"
-              aria-hidden="true"
-            >
+            <div className="font-display text-[4.5rem] leading-none text-primary/8 mb-1 -mt-3 select-none" aria-hidden="true">
               "
             </div>
 
-            {/* Stars */}
             <div className="flex gap-0.5 mb-5" aria-label="5 estrelas">
               {Array.from({ length: 5 }).map((_, j) => (
-                <span key={j} className="text-primary text-sm">★</span>
+                <span key={j} className="text-primary text-[0.8rem]">★</span>
               ))}
             </div>
 
-            {/* Quote */}
-            <p className="text-[0.98rem] leading-[1.8] text-white/65 mb-8">
-              "{t.quote}"
+            <p className="text-[0.95rem] leading-[1.85] text-white/60 flex-1">
+              {t.quote}
             </p>
 
-            {/* Author */}
-            <div className="flex items-center gap-3 pt-6 border-t border-white/5">
-              <div className="w-9 h-9 rounded-full bg-primary/10 border border-primary/25 flex items-center justify-center font-display text-xs text-primary flex-shrink-0">
+            <div className="flex items-center gap-3 pt-7 mt-7 border-t border-white/5">
+              <div className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center font-display text-xs text-primary flex-shrink-0">
                 {t.initials}
               </div>
               <div>
