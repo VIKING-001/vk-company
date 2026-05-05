@@ -12,22 +12,22 @@ const Index = () => {
   return (
     <main className="relative">
       <Hero />
-      <ScrollReveal>
+      <ScrollReveal id="filosofia">
         <Manifesto />
       </ScrollReveal>
-      <ScrollReveal>
+      <ScrollReveal id="sobre">
         <About />
       </ScrollReveal>
-      <ScrollReveal>
+      <ScrollReveal id="servicos">
         <Services />
       </ScrollReveal>
-      <ScrollReveal>
+      <ScrollReveal id="cases">
         <CaseSection />
       </ScrollReveal>
-      <ScrollReveal>
+      <ScrollReveal id="processo">
         <Process />
       </ScrollReveal>
-      <ScrollReveal>
+      <ScrollReveal id="contato">
         <CtaSection />
       </ScrollReveal>
       <Footer />
@@ -36,4 +36,3 @@ const Index = () => {
 };
 
 export default Index;
-

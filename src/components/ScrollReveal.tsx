@@ -6,9 +6,18 @@ interface ScrollRevealProps {
   width?: "fit-content" | "100%";
   delay?: number;
   direction?: "up" | "down" | "left" | "right";
+  id?: string;
+  className?: string;
 }
 
-const ScrollReveal = ({ children, width = "100%", delay = 0, direction = "up" }: ScrollRevealProps) => {
+const ScrollReveal = ({
+  children,
+  width = "100%",
+  delay = 0,
+  direction = "up",
+  id,
+  className,
+}: ScrollRevealProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -24,7 +33,7 @@ const ScrollReveal = ({ children, width = "100%", delay = 0, direction = "up" }:
   }), [direction, offset]);
 
   return (
-    <div ref={ref} style={{ position: "relative", width }}>
+    <div ref={ref} id={id} className={className} style={{ position: "relative", width }}>
       <motion.div
         initial={initial}
         animate={isInView ? { opacity: 1, y: 0, x: 0 } : initial}

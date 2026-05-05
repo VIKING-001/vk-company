@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
-import { useRef, useMemo } from "react";
 import logo from "../assets/logo.png";
 import fotoHero from "../assets/foto-perfil.jpg";
 import { WHATSAPP_LINK } from "../lib/constants";
-
-const isDesktop = typeof window !== "undefined" && window.innerWidth > 1024;
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -20,7 +17,7 @@ const PhotoBlock = () => {
       transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
       className="w-full max-w-[340px] mx-auto lg:max-w-none lg:w-[420px] xl:w-[500px] h-[380px] md:h-[460px] lg:h-[560px] xl:h-[680px] relative flex-shrink-0"
     >
-      {/* Static halo glow — no animation, GPU-friendly */}
+      {/* Static halo glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
         <div
           className="w-[110%] h-[110%] rounded-full"
@@ -32,13 +29,13 @@ const PhotoBlock = () => {
       </div>
 
       {/* Photo */}
-      <div
-        className="absolute inset-0 z-10 overflow-hidden rounded-[1.5rem] lg:rounded-[2rem] shadow-[0_0_60px_rgba(254,196,17,0.1)]"
-      >
+      <div className="absolute inset-0 z-10 overflow-hidden rounded-[1.5rem] lg:rounded-[2rem] shadow-[0_0_60px_rgba(254,196,17,0.1)]">
         <img
           src={fotoHero}
-          alt="Rodrigo Cabral – Founder"
+          alt="Rodrigo Cabral, Founder & CEO da VK Company"
           className="w-full h-full object-cover object-top"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute bottom-0 left-0 right-0 h-[40%]" style={{
           background: 'linear-gradient(to top, hsl(222 47% 2%) 0%, transparent 100%)'
@@ -51,12 +48,14 @@ const PhotoBlock = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
         className="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-primary/40 z-20"
+        aria-hidden="true"
       />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.7, duration: 0.5, ease: "easeOut" }}
         className="absolute -top-2 -left-2 w-12 h-12 border-t-2 border-l-2 border-primary/20 z-20"
+        aria-hidden="true"
       />
     </motion.div>
   );
@@ -64,9 +63,13 @@ const PhotoBlock = () => {
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-end px-[5vw] pb-[8vh] relative overflow-hidden">
-      {/* Background — static gradients, no animation */}
-      <div className="absolute inset-0 bg-[#0F0F10]">
+    <section
+      id="inicio"
+      aria-label="Seção principal"
+      className="min-h-screen flex flex-col justify-end px-[5vw] pb-[8vh] relative overflow-hidden"
+    >
+      {/* Background */}
+      <div className="absolute inset-0 bg-[#0F0F10]" aria-hidden="true">
         <div
           className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full"
           style={{
@@ -84,7 +87,7 @@ const Hero = () => {
       </div>
 
       {/* Vertical grid lines */}
-      <div className="absolute inset-0 flex justify-between px-[12.5vw] pointer-events-none opacity-[0.03]">
+      <div className="absolute inset-0 flex justify-between px-[12.5vw] pointer-events-none opacity-[0.03]" aria-hidden="true">
         {[1, 2, 3, 4].map((i) => (
           <div key={i} className="w-px h-full bg-primary" />
         ))}
@@ -98,32 +101,26 @@ const Hero = () => {
           <motion.div {...fadeUp(0)} className="w-fit mb-10">
             <img
               src={logo}
-              alt="VK Company Logo"
+              alt="VK Company"
               className="h-[80px] md:h-[100px] w-auto object-contain"
               style={{ mixBlendMode: 'screen' }}
+              loading="eager"
             />
           </motion.div>
 
-          <motion.div
+          <motion.p
             {...fadeUp(0.15)}
             className="text-[0.72rem] tracking-[0.22em] uppercase text-primary mb-6 flex items-center gap-3"
           >
-            <span className="w-8 h-px bg-primary inline-block" />
+            <span className="w-8 h-px bg-primary inline-block" aria-hidden="true" />
             Agência Digital Estratégica
-          </motion.div>
+          </motion.p>
 
-          {/* Headline with staggered words */}
           <h1 className="font-display text-[clamp(4rem,10vw,8.5rem)] leading-[0.92] tracking-[0.02em]">
-            <motion.span
-              {...fadeUp(0.3)}
-              className="block"
-            >
+            <motion.span {...fadeUp(0.3)} className="block">
               Seu negócio
             </motion.span>
-            <motion.em
-              {...fadeUp(0.45)}
-              className="not-italic text-primary block"
-            >
+            <motion.em {...fadeUp(0.45)} className="not-italic text-primary block">
               merece mais<br />
               que botões.
             </motion.em>
@@ -145,7 +142,6 @@ const Hero = () => {
             {...fadeUp(0.65)}
             className="flex flex-wrap items-center gap-8 mt-12"
           >
-
             <motion.a
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
@@ -153,13 +149,17 @@ const Hero = () => {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Quero contratar a VK Company — abre WhatsApp"
               className="inline-flex items-center gap-2.5 bg-primary text-primary-foreground font-bold text-[0.82rem] tracking-[0.14em] uppercase px-10 py-5 transition-colors shadow-[0_10px_40px_rgba(201,162,77,0.2)]"
             >
               Quero contratar
             </motion.a>
-            <span className="text-[0.72rem] tracking-[0.18em] uppercase text-white/40">
+            <a
+              href="#filosofia"
+              className="text-[0.72rem] tracking-[0.18em] uppercase text-white/40 hover:text-white/70 transition-colors duration-200"
+            >
               ↓ Conheça o método
-            </span>
+            </a>
           </motion.div>
         </div>
 

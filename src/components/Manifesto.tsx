@@ -2,7 +2,10 @@ import { motion } from "framer-motion";
 
 const Manifesto = () => {
   return (
-    <section className="px-[5vw] py-10 md:py-[10vh] border-t border-white/5 bg-background grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 md:gap-16 items-start">
+    <section
+      aria-label="Nossa filosofia"
+      className="px-[5vw] py-10 md:py-[10vh] border-t border-white/5 bg-background grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 md:gap-16 items-start"
+    >
       <p className="text-[0.68rem] tracking-[0.25em] uppercase text-primary pt-1">
         Nossa filosofia
       </p>

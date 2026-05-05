@@ -11,10 +11,7 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
   },
 };
 
@@ -23,14 +20,16 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
   },
 };
 
 const Process = () => {
   return (
-    <section className="px-[5vw] py-12 md:py-[10vh] border-t border-white/5 bg-background overflow-hidden">
-      {/* Header */}
+    <section
+      aria-label="Nosso processo de trabalho"
+      className="px-[5vw] py-12 md:py-[10vh] border-t border-white/5 bg-background overflow-hidden"
+    >
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-10 md:mb-16">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -45,13 +44,13 @@ const Process = () => {
         </motion.div>
       </div>
 
-      {/* Steps grid */}
-      <motion.div
+      <motion.ol
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-60px" }}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 relative"
+        aria-label="Etapas do processo"
       >
         {/* Connecting line desktop */}
         <motion.div
@@ -61,26 +60,31 @@ const Process = () => {
           transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
           style={{ originX: 0 }}
           className="hidden lg:block absolute top-7 left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-20"
+          aria-hidden="true"
         />
 
-        {steps.map((s) => (
-          <motion.div
+        {steps.map((s, i) => (
+          <motion.li
             key={s.num}
             variants={itemVariants}
             className="lg:pr-8 relative flex gap-4 sm:block group"
           >
             <div
+              aria-hidden="true"
               className="w-14 h-14 flex-shrink-0 border border-border rounded-full flex items-center justify-center sm:mb-6 bg-secondary font-display text-lg text-primary relative z-10 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"
             >
               {s.num}
             </div>
             <div>
-              <h3 className="font-display text-[1.15rem] tracking-[0.05em] mb-2 sm:mb-3 group-hover:text-primary transition-colors duration-300">{s.title}</h3>
+              <h3 className="font-display text-[1.15rem] tracking-[0.05em] mb-2 sm:mb-3 group-hover:text-primary transition-colors duration-300">
+                <span className="sr-only">Etapa {i + 1}: </span>
+                {s.title}
+              </h3>
               <p className="text-[0.85rem] leading-[1.7] text-muted-foreground group-hover:text-white/80 transition-colors duration-300">{s.desc}</p>
             </div>
-          </motion.div>
+          </motion.li>
         ))}
-      </motion.div>
+      </motion.ol>
     </section>
   );
 };

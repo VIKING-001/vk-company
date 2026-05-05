@@ -11,9 +11,7 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-    },
+    transition: { staggerChildren: 0.08 },
   },
 };
 
@@ -28,7 +26,10 @@ const itemVariants = {
 
 const Services = () => {
   return (
-    <section className="px-[5vw] py-12 md:py-[10vh] border-t border-white/5 bg-background">
+    <section
+      aria-label="Nossos serviços"
+      className="px-[5vw] py-12 md:py-[10vh] border-t border-white/5 bg-background"
+    >
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 md:mb-16 gap-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,7 +44,8 @@ const Services = () => {
         </motion.div>
       </div>
 
-      <motion.div
+      <motion.ul
+        role="list"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -51,20 +53,20 @@ const Services = () => {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border"
       >
         {services.map((s) => (
-          <motion.div
+          <motion.li
             key={s.num}
             variants={itemVariants}
             className="group bg-secondary p-10 relative overflow-hidden hover:bg-card transition-colors duration-300"
           >
-            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500" />
-            <div className="font-display text-[3.5rem] text-border leading-none mb-6 group-hover:text-primary/15 transition-colors duration-300">
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500" aria-hidden="true" />
+            <div className="font-display text-[3.5rem] text-border leading-none mb-6 group-hover:text-primary/15 transition-colors duration-300" aria-hidden="true">
               {s.num}
             </div>
             <h3 className="font-display text-[1.6rem] tracking-[0.05em] mb-4 text-foreground">{s.name}</h3>
             <p className="text-[0.9rem] leading-[1.7] text-muted-foreground">{s.desc}</p>
-          </motion.div>
+          </motion.li>
         ))}
-      </motion.div>
+      </motion.ul>
     </section>
   );
 };

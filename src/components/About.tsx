@@ -3,7 +3,10 @@ import fotoPerfil from "../assets/foto-fundador.jpg";
 
 const About = () => {
   return (
-    <section className="px-[5vw] py-12 md:py-[12vh] bg-background relative overflow-hidden border-t border-border">
+    <section
+      aria-label="Sobre o fundador"
+      className="px-[5vw] py-12 md:py-[12vh] bg-background relative overflow-hidden border-t border-border"
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
         {/* Photo Container */}
         <motion.div
@@ -13,12 +16,13 @@ const About = () => {
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
           className="order-1 lg:order-1 relative group"
         >
-          <div className="absolute -inset-4 border border-primary/10 rotate-2 -z-10 group-hover:rotate-0 transition-transform duration-500" />
+          <div className="absolute -inset-4 border border-primary/10 rotate-2 -z-10 group-hover:rotate-0 transition-transform duration-500" aria-hidden="true" />
           <div className="aspect-[4/5] overflow-hidden shadow-2xl rounded-sm">
             <img
               src={fotoPerfil}
-              alt="Perfil Fundador"
+              alt="Rodrigo Cabral, Founder & CEO da VK Company"
               className="w-full h-full object-cover object-top grayscale-[30%] group-hover:grayscale-0 transition-all duration-700"
+              loading="lazy"
               style={{ transform: 'scale(1)', transition: 'filter 0.7s ease, transform 0.7s ease' }}
               onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.03)')}
               onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
@@ -56,7 +60,7 @@ const About = () => {
             <p>
               Cada projeto que assumimos passa por um olhar crítico e estratégico, focado em criar um posicionamento de marca sólido e funis de vendas que convertem de verdade.
             </p>
-            <motion.p
+            <motion.blockquote
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -64,7 +68,7 @@ const About = () => {
               className="border-l-2 border-primary pl-6 py-2 italic text-white"
             >
               "Nosso objetivo não é apenas entregar um serviço, mas sim construir o próximo grande case do seu setor."
-            </motion.p>
+            </motion.blockquote>
           </div>
         </motion.div>
       </div>
