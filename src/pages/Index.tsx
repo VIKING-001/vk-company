@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import CaseSection from "@/components/CaseSection";
 import Testimonials from "@/components/Testimonials";
 import Process from "@/components/Process";
+import FAQ from "@/components/FAQ";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -32,6 +33,9 @@ const Index = () => {
       </ScrollReveal>
       <ScrollReveal id="processo">
         <Process />
+      </ScrollReveal>
+      <ScrollReveal id="faq">
+        <FAQ />
       </ScrollReveal>
       <ScrollReveal id="contato">
         <CtaSection />
