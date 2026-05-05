@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 const stats = [
-  { value: 23, suffix: "", label: "Projetos entregues" },
+  { value: 100, suffix: "+", label: "Projetos entregues" },
   { value: 97, suffix: "%", label: "Clientes que renovaram" },
   { value: 4, suffix: " anos", label: "No mercado digital" },
   { value: 12, suffix: " nichos", label: "Atendidos até hoje" },
