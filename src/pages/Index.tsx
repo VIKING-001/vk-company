@@ -1,8 +1,10 @@
 import Hero from "@/components/Hero";
+import Stats from "@/components/Stats";
 import Manifesto from "@/components/Manifesto";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import CaseSection from "@/components/CaseSection";
+import Testimonials from "@/components/Testimonials";
 import Process from "@/components/Process";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
@@ -12,6 +14,7 @@ const Index = () => {
   return (
     <main className="relative">
       <Hero />
+      <Stats />
       <ScrollReveal id="filosofia">
         <Manifesto />
       </ScrollReveal>
@@ -23,6 +26,9 @@ const Index = () => {
       </ScrollReveal>
       <ScrollReveal id="cases">
         <CaseSection />
+      </ScrollReveal>
+      <ScrollReveal id="depoimentos">
+        <Testimonials />
       </ScrollReveal>
       <ScrollReveal id="processo">
         <Process />
