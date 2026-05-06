@@ -110,9 +110,8 @@ const Hero = () => {
 
           <motion.p
             {...fadeUp(0.15)}
-            className="text-[0.72rem] tracking-[0.22em] uppercase text-primary mb-6 flex items-center gap-3"
+            className="text-[0.72rem] tracking-[0.22em] uppercase text-primary mb-6"
           >
-            <span className="w-8 h-px bg-primary inline-block" aria-hidden="true" />
             Agência Digital Estratégica
           </motion.p>
 
