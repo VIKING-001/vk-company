@@ -142,22 +142,21 @@ const Hero = () => {
             className="flex flex-wrap items-center gap-8 mt-12"
           >
             <motion.a
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Quero contratar a VK Company — abre WhatsApp"
-              className="inline-flex items-center gap-2.5 bg-primary text-primary-foreground font-bold text-[0.82rem] tracking-[0.14em] uppercase px-10 py-5 transition-colors shadow-[0_10px_40px_rgba(201,162,77,0.2)]"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-2.5 bg-primary text-primary-foreground font-bold text-[0.82rem] tracking-[0.14em] uppercase px-10 py-5 rounded-lg hover:bg-primary/90 transition-colors duration-200"
             >
               Quero contratar
             </motion.a>
             <a
-              href="#filosofia"
-              className="text-[0.72rem] tracking-[0.18em] uppercase text-white/40 hover:text-white/70 transition-colors duration-200"
+              href="#servicos"
+              className="text-[0.72rem] tracking-[0.18em] uppercase text-white/35 hover:text-white/60 transition-colors duration-200"
             >
-              ↓ Conheça o método
+              Ver serviços
             </a>
           </motion.div>
         </div>

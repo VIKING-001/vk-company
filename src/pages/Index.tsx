@@ -15,24 +15,24 @@ const Index = () => {
   return (
     <main className="relative">
       <Hero />
-      <Stats />
       <ScrollReveal id="filosofia">
         <Manifesto />
       </ScrollReveal>
-      <ScrollReveal id="sobre">
-        <About />
-      </ScrollReveal>
+      <Stats />
       <ScrollReveal id="servicos">
         <Services />
       </ScrollReveal>
       <ScrollReveal id="cases">
         <CaseSection />
       </ScrollReveal>
-      <ScrollReveal id="depoimentos">
-        <Testimonials />
-      </ScrollReveal>
       <ScrollReveal id="processo">
         <Process />
+      </ScrollReveal>
+      <ScrollReveal id="sobre">
+        <About />
+      </ScrollReveal>
+      <ScrollReveal id="depoimentos">
+        <Testimonials />
       </ScrollReveal>
       <ScrollReveal id="faq">
         <FAQ />
