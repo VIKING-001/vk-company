@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import fotoHero from "../assets/foto-perfil.jpg";
 import { WHATSAPP_LINK } from "../lib/constants";
@@ -152,12 +153,12 @@ const Hero = () => {
             >
               Quero contratar
             </motion.a>
-            <a
-              href="#servicos"
-              className="text-[0.72rem] tracking-[0.18em] uppercase text-white/35 hover:text-white/60 transition-colors duration-200"
+            <Link
+              to="/diagnostico"
+              className="text-[0.72rem] tracking-[0.18em] uppercase text-white/35 hover:text-white/60 transition-colors duration-200 border-b border-white/15 pb-0.5"
             >
-              Ver serviços
-            </a>
+              Diagnóstico gratuito
+            </Link>
           </motion.div>
         </div>
 
