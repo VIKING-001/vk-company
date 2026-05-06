@@ -4,3 +4,4 @@ export const CONTACT_INFO = {
 };
 
 export const WHATSAPP_LINK = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${encodeURIComponent(CONTACT_INFO.message)}`;
+export const DIAGNOSTICO_LINK = "https://vk-diagnostico.vercel.app";

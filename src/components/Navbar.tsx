@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "../assets/logo.png";
-import { WHATSAPP_LINK } from "../lib/constants";
+import { DIAGNOSTICO_LINK } from "../lib/constants";
 
 const navLinks = [
   { label: "Serviços", href: "#servicos" },
@@ -77,15 +77,15 @@ const Navbar = () => {
         </ul>
 
         <motion.a
-          href={WHATSAPP_LINK}
+          href={DIAGNOSTICO_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Falar agora pelo WhatsApp"
+          aria-label="Fazer diagnóstico gratuito"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.96 }}
           className="bg-primary text-primary-foreground font-bold text-[0.72rem] md:text-[0.75rem] tracking-[0.14em] uppercase px-5 py-2.5 md:px-7 md:py-3 rounded-sm hover:bg-primary/90 transition-colors duration-200"
         >
-          Falar Agora
+          Diagnóstico gratuito
         </motion.a>
       </div>
     </motion.nav>

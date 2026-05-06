@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import logo from "../assets/logo.png";
 import fotoHero from "../assets/foto-perfil.jpg";
-import { WHATSAPP_LINK } from "../lib/constants";
+import { DIAGNOSTICO_LINK } from "../lib/constants";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -142,15 +142,15 @@ const Hero = () => {
             className="flex flex-wrap items-center gap-8 mt-12"
           >
             <motion.a
-              href={WHATSAPP_LINK}
+              href={DIAGNOSTICO_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Quero contratar a VK Company — abre WhatsApp"
+              aria-label="Fazer diagnóstico gratuito"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2.5 bg-primary text-primary-foreground font-bold text-[0.82rem] tracking-[0.14em] uppercase px-10 py-5 rounded-sm hover:bg-primary/90 transition-colors duration-200"
             >
-              Quero contratar
+              Diagnóstico gratuito
             </motion.a>
             <a
               href="#servicos"
