@@ -6,7 +6,7 @@ const partners = [
     name: "Autêntica Moda Íntima",
     niche: "Moda Íntima Feminina",
     location: "Goiânia, GO",
-    description: "Identidade visual, gestão de redes sociais e estratégia de conteúdo para uma das maiores lojas de moda íntima da região.",
+    description: "Identidade visual, estratégia de marca e presença digital para uma das maiores lojas de moda íntima da região.",
     icon: Heart,
     color: "from-pink-950/40 to-transparent",
     accent: "border-pink-500/30",
