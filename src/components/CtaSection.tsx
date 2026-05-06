@@ -62,7 +62,7 @@ const CtaSection = () => {
               aria-label="Falar no WhatsApp com a VK Company"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center justify-between gap-4 bg-primary text-primary-foreground font-bold text-[0.8rem] tracking-[0.14em] uppercase px-8 py-5 w-full rounded-lg hover:bg-primary/90 transition-colors duration-200"
+              className="flex items-center justify-between gap-4 bg-primary text-primary-foreground font-bold text-[0.8rem] tracking-[0.14em] uppercase px-8 py-5 w-full rounded-sm hover:bg-primary/90 transition-colors duration-200"
             >
               <span className="inline-flex items-center gap-3">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

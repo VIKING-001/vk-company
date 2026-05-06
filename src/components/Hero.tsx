@@ -148,7 +148,7 @@ const Hero = () => {
               aria-label="Quero contratar a VK Company — abre WhatsApp"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2.5 bg-primary text-primary-foreground font-bold text-[0.82rem] tracking-[0.14em] uppercase px-10 py-5 rounded-lg hover:bg-primary/90 transition-colors duration-200"
+              className="inline-flex items-center gap-2.5 bg-primary text-primary-foreground font-bold text-[0.82rem] tracking-[0.14em] uppercase px-10 py-5 rounded-sm hover:bg-primary/90 transition-colors duration-200"
             >
               Quero contratar
             </motion.a>
