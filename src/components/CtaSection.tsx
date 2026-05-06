@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+
 import { CheckCircle } from "lucide-react";
 import { WHATSAPP_LINK } from "../lib/constants";
 
@@ -77,16 +77,6 @@ const CtaSection = () => {
             <p className="text-[0.65rem] text-white/20 tracking-wide mt-4 text-center">
               Resposta em até 2 horas nos dias úteis
             </p>
-
-            <div className="mt-6 pt-6 border-t border-white/5 text-center">
-              <p className="text-[0.72rem] text-white/30 mb-2">Prefere se apresentar antes?</p>
-              <Link
-                to="/diagnostico"
-                className="text-[0.75rem] tracking-[0.15em] uppercase text-primary/70 hover:text-primary transition-colors duration-200 border-b border-primary/20 pb-0.5"
-              >
-                Preencher diagnóstico gratuito →
-              </Link>
-            </div>
           </div>
         </motion.div>
       </div>
