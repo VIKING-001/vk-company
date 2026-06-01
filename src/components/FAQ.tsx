@@ -62,7 +62,7 @@ const FAQItem = ({ q, a, index }: { q: string; a: string; index: number }) => {
             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-[0.92rem] leading-[1.85] text-white/50 max-w-[600px]">
+            <p className="pb-6 text-[0.92rem] leading-[1.85] text-white/70 max-w-[600px]">
               {a}
             </p>
           </motion.div>

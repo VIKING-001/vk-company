@@ -41,7 +41,7 @@ const StatItem = ({
       <span className="font-display text-[clamp(2rem,4vw,3.2rem)] text-primary leading-none mb-2 tabular-nums">
         {prefix}{count}{suffix}
       </span>
-      <span className="text-[0.68rem] tracking-[0.18em] uppercase text-white/35 mt-1">
+      <span className="text-[0.68rem] tracking-[0.18em] uppercase text-white/55 mt-1">
         {label}
       </span>
     </motion.div>

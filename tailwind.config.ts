@@ -81,6 +81,14 @@ export default {
           from: { opacity: "0", transform: "translateY(30px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "shine": {
+          from: { transform: "translateX(-100%) skewX(-15deg)" },
+          to:   { transform: "translateX(200%) skewX(-15deg)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { boxShadow: "0 0 20px rgba(254,196,17,0.15)" },
+          "50%":       { boxShadow: "0 0 40px rgba(254,196,17,0.35)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -89,6 +97,8 @@ export default {
         "fade-up-1": "fade-up 0.9s 0.1s ease both",
         "fade-up-2": "fade-up 1s 0.2s ease both",
         "fade-up-3": "fade-up 1s 0.3s ease both",
+        "shine": "shine 0.65s ease forwards",
+        "pulse-glow": "pulse-glow 2.5s ease-in-out infinite",
       },
     },
   },

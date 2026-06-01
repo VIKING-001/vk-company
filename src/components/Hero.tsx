@@ -148,13 +148,14 @@ const Hero = () => {
               aria-label="Fazer diagnóstico gratuito"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2.5 bg-primary text-primary-foreground font-bold text-[0.82rem] tracking-[0.14em] uppercase px-10 py-5 rounded-sm hover:bg-primary/90 transition-colors duration-200"
+              className="relative overflow-hidden inline-flex items-center gap-2.5 bg-primary text-primary-foreground font-bold text-[0.82rem] tracking-[0.14em] uppercase px-10 py-5 rounded-sm shadow-[0_10px_40px_rgba(254,196,17,0.25)] hover:shadow-[0_14px_50px_rgba(254,196,17,0.45)] transition-shadow duration-300 group"
             >
-              Diagnóstico gratuito
+              <span className="relative z-10">Diagnóstico gratuito</span>
+              <span className="absolute inset-0 w-1/3 h-full bg-white/30 blur-sm -skew-x-12 -translate-x-full group-hover:animate-shine pointer-events-none" />
             </motion.a>
             <a
               href="#servicos"
-              className="text-[0.72rem] tracking-[0.18em] uppercase text-white/35 hover:text-white/60 transition-colors duration-200"
+              className="text-[0.72rem] tracking-[0.18em] uppercase text-white/55 hover:text-white/80 transition-colors duration-200"
             >
               Ver serviços
             </a>

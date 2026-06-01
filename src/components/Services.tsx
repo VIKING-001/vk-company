@@ -76,7 +76,7 @@ const Services = () => {
             <motion.li
               key={s.num}
               variants={itemVariants}
-              className="group bg-secondary p-8 lg:p-10 relative overflow-hidden hover:bg-card transition-colors duration-300 flex flex-col"
+              className="group bg-secondary p-8 lg:p-10 relative overflow-hidden hover:bg-card hover:shadow-[inset_0_0_50px_rgba(254,196,17,0.05),0_0_0_1px_rgba(254,196,17,0.1)] transition-all duration-300 flex flex-col"
             >
               <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500" />
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

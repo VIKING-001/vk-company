@@ -75,7 +75,7 @@ const Partners = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-                className={`bg-background p-6 lg:p-8 flex flex-col gap-4 group border-t-0 border-l-0`}
+                className={`bg-background p-6 lg:p-8 flex flex-col gap-4 group border-t-0 border-l-0 hover:bg-secondary/40 hover:shadow-[inset_0_0_40px_rgba(254,196,17,0.04),0_0_0_1px_rgba(254,196,17,0.08)] transition-all duration-300`}
               >
                 {/* Icon */}
                 <div className={`w-10 h-10 rounded-sm bg-gradient-to-br ${p.color} border ${p.accent} flex items-center justify-center`}>
@@ -84,13 +84,13 @@ const Partners = () => {
 
                 {/* Info */}
                 <div className="flex-1">
-                  <p className="text-[0.6rem] tracking-[0.2em] uppercase text-white/30 mb-1">
+                  <p className="text-[0.6rem] tracking-[0.2em] uppercase text-white/50 mb-1">
                     {p.niche} · {p.location}
                   </p>
                   <h3 className="font-display text-[1.15rem] leading-tight mb-3 group-hover:text-primary transition-colors duration-300">
                     {p.name}
                   </h3>
-                  <p className="text-[0.8rem] text-white/45 leading-[1.65]">
+                  <p className="text-[0.8rem] text-white/65 leading-[1.65]">
                     {p.description}
                   </p>
                 </div>
@@ -98,7 +98,7 @@ const Partners = () => {
                 {/* Indicator */}
                 <div className="flex items-center gap-2 pt-2 border-t border-white/5">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/60" />
-                  <span className="text-[0.6rem] tracking-[0.15em] uppercase text-white/25">
+                  <span className="text-[0.6rem] tracking-[0.15em] uppercase text-white/45">
                     Cliente ativo
                   </span>
                 </div>

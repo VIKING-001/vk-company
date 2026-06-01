@@ -68,7 +68,7 @@ const Testimonials = () => {
           >
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
-            <div className="font-display text-[4.5rem] leading-none text-primary/8 mb-1 -mt-3 select-none" aria-hidden="true">
+            <div className="font-display text-[4.5rem] leading-none text-primary/20 mb-1 -mt-3 select-none" aria-hidden="true">
               "
             </div>
 
@@ -78,7 +78,7 @@ const Testimonials = () => {
               ))}
             </div>
 
-            <p className="text-[0.95rem] leading-[1.85] text-white/60 flex-1">
+            <p className="text-[0.95rem] leading-[1.85] text-white/75 flex-1">
               {t.quote}
             </p>
 
@@ -88,7 +88,7 @@ const Testimonials = () => {
               </div>
               <div>
                 <p className="text-[0.85rem] font-semibold text-white leading-tight">{t.name}</p>
-                <p className="text-[0.72rem] text-white/35 tracking-wide mt-0.5">{t.role}</p>
+                <p className="text-[0.72rem] text-white/55 tracking-wide mt-0.5">{t.role}</p>
               </div>
             </div>
           </motion.div>
