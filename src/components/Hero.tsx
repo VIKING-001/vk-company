@@ -4,6 +4,7 @@ import logo from "../assets/logo.png";
 import fotoHero from "../assets/foto-perfil.jpg";
 import { DIAGNOSTICO_LINK } from "../lib/constants";
 import MagneticButton from "./MagneticButton";
+import CybercoreBackground from "./ui/cybercore-section-hero";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
@@ -151,12 +152,8 @@ const Hero = () => {
           background: 'radial-gradient(ellipse at 20% 80%, rgba(254,196,17,0.06) 0%, transparent 60%)',
           filter: 'blur(80px)',
         }} />
-        {/* Noise grain overlay */}
-        <div className="absolute inset-0 opacity-[0.035]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
-          backgroundSize: '128px',
-        }} />
-      </div>
+        {/* Cybercore animated grid background */}
+        <CybercoreBackground beamCount={50} /></div>
 
       {/* Vertical grid lines */}
       <div className="absolute inset-0 flex justify-between px-[12.5vw] pointer-events-none" aria-hidden="true">
@@ -225,7 +222,7 @@ const Hero = () => {
               href={DIAGNOSTICO_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Fazer diagnóstico gratuito"
+              aria-label="Iniciar questionário de qualificação"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="relative overflow-hidden inline-flex items-center gap-3 text-primary-foreground font-bold text-[0.8rem] tracking-[0.16em] uppercase px-10 py-5 rounded-sm group"
@@ -236,7 +233,7 @@ const Hero = () => {
               onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 14px 48px rgba(254,196,17,0.5), 0 4px 16px rgba(254,196,17,0.3), inset 0 1px 0 rgba(255,255,255,0.25)')}
               onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 8px 32px rgba(254,196,17,0.3), 0 2px 8px rgba(254,196,17,0.2), inset 0 1px 0 rgba(255,255,255,0.2)')}
             >
-              <span className="relative z-10">Diagnóstico gratuito</span>
+              <span className="relative z-10">Iniciar qualificação</span>
               <span className="relative z-10 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">→</span>
               {/* Shine sweep */}
               <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"

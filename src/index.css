@@ -318,3 +318,156 @@ html {
     clip-path: inset(0 0 0% 0);
   }
 }
+
+/* ===== Cybercore Background (adaptado para dourado VK) ===== */
+
+@keyframes cybercoreRise {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-5%);
+    opacity: 0;
+  }
+}
+
+@keyframes cybercoreFade {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  5%,
+  85% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes cybercoreFloorGlow {
+
+  0%,
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes cybercoreMainGlow {
+  from {
+    opacity: 0.5;
+    filter: blur(30px);
+  }
+
+  to {
+    opacity: 0.7;
+    filter: blur(20px);
+  }
+}
+
+@keyframes cybercoreMoveGrid {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -100px -50px;
+  }
+}
+
+/* Container principal */
+.cybercore-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Piso em perspectiva com grid */
+.cybercore-floor {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  width: 200%;
+  height: 60%;
+  transform: translateX(-50%) perspective(400px) rotateX(60deg);
+  transform-origin: center bottom;
+  background-image:
+    linear-gradient(rgba(254, 196, 17, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(254, 196, 17, 0.15) 1px, transparent 1px);
+  background-size: 100px 100px;
+  animation: cybercoreMoveGrid 4s linear infinite;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 80%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 80%);
+}
+
+/* Glow do piso */
+.cybercore-floor::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 40%;
+  background: radial-gradient(ellipse at center, rgba(254, 196, 17, 0.25) 0%, transparent 70%);
+  filter: blur(40px);
+  animation: cybercoreFloorGlow 4s ease-in-out infinite;
+}
+
+/* Coluna central de luz */
+.cybercore-column {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(254, 196, 17, 0.4), transparent);
+  animation: cybercoreMainGlow 3s ease-in-out infinite alternate;
+}
+
+/* Container dos feixes de luz */
+.cybercore-beam-container {
+  position: absolute;
+  inset: 0;
+}
+
+/* Feixes de luz individuais */
+.cybercore-beam {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  background: linear-gradient(to top, rgba(254, 196, 17, 0.6), transparent);
+  animation-name: cybercoreRise, cybercoreFade;
+  animation-timing-function: ease-out, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+
+.cybercore-beam.secondary {
+  background: linear-gradient(to top, rgba(255, 184, 108, 0.4), transparent);
+}
+
+/* Responsivo: reduz intensidade no mobile */
+@media (max-width: 768px) {
+  .cybercore-floor {
+    height: 40%;
+    background-size: 60px 60px;
+  }
+
+  .cybercore-beam {
+    opacity: 0.5;
+  }
+}
