@@ -53,10 +53,10 @@ const Stats = () => {
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="border-t border-b border-white/5 relative overflow-hidden">
+    <section ref={ref} className="relative overflow-hidden section-scan section-grid">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 60% 100% at 50% 0%, rgba(254,196,17,0.04) 0%, transparent 100%)" }}
+        style={{ background: "radial-gradient(ellipse 60% 100% at 50% 0%, rgba(254,196,17,0.08) 0%, transparent 100%)" }}
         aria-hidden="true"
       />
       <div className="px-[5vw] relative z-10">

@@ -19,7 +19,7 @@ const CtaSection = () => {
     <section
       ref={ref}
       aria-label="Chamada para aÃ§Ã£o â€” entre em contato"
-      className="px-[5vw] py-16 md:py-[16vh] border-t border-white/5 bg-background relative overflow-hidden"
+      className="px-[5vw] py-16 md:py-[16vh] bg-background relative overflow-hidden section-scan"
     >
       {/* Background dramÃ¡tico */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -137,7 +137,7 @@ const CtaSection = () => {
               </MagneticButton>
 
               <p className="text-[0.65rem] text-white/45 tracking-wide mt-4 text-center">
-                Questionário rápido de qualificação. Leva 2 minutos.
+                Questionï¿½rio rï¿½pido de qualificaï¿½ï¿½o. Leva 2 minutos.
               </p>
             </div>
           </motion.div>

@@ -35,7 +35,7 @@ const Testimonials = () => {
   return (
     <section
       aria-label="Depoimentos de clientes"
-      className="px-[5vw] py-12 md:py-[10vh] border-t border-white/5 bg-background"
+      className="px-[5vw] py-12 md:py-[10vh] bg-background section-scan section-grid"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}

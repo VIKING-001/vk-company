@@ -47,7 +47,7 @@ const Services = () => {
   return (
     <section
       aria-label="Nossos serviços"
-      className="px-[5vw] py-12 md:py-[10vh] border-t border-white/5 bg-background"
+      className="px-[5vw] py-12 md:py-[10vh] bg-background section-scan section-grid"
     >
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 md:mb-16 gap-4">
         <motion.div

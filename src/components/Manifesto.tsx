@@ -8,7 +8,7 @@ const Manifesto = () => {
   return (
     <section
       ref={ref}
-      className="px-[5vw] py-12 md:py-[10vh] border-t border-white/5 bg-background relative overflow-hidden"
+      className="px-[5vw] py-12 md:py-[10vh] bg-background relative overflow-hidden section-scan section-grid"
     >
       {/* Left accent line */}
       <div className="absolute left-0 top-[10%] bottom-[10%] w-px" aria-hidden="true"

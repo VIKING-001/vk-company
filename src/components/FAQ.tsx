@@ -76,7 +76,7 @@ const FAQ = () => {
   return (
     <section
       aria-label="Perguntas frequentes"
-      className="px-[5vw] py-12 md:py-[10vh] border-t border-white/5 bg-secondary/20"
+      className="px-[5vw] py-12 md:py-[10vh] bg-secondary/20 section-scan section-grid"
     >
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-24 max-w-[1000px] mx-auto">
         <motion.div

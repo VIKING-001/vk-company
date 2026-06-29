@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section
       aria-label="Sobre o fundador"
-      className="px-[5vw] py-12 md:py-[12vh] bg-background relative overflow-hidden border-t border-border"
+      className="px-[5vw] py-12 md:py-[12vh] bg-background relative overflow-hidden section-scan section-grid"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
         {/* Photo Container */}

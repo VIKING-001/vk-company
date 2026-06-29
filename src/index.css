@@ -492,3 +492,56 @@ html {
     opacity: 0.4;
   }
 }
+
+/* ===== Seções: grid overlay, scan line e bordas douradas ===== */
+
+/* Scan line animada que percorre a seção — efeito HERDADO do Hero */
+@keyframes scanLine {
+  0% { top: 0; opacity: 0; }
+  5% { opacity: 0.25; }
+  10% { opacity: 0.05; }
+  92% { opacity: 0.05; }
+  95% { opacity: 0.25; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.section-scan {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-scan::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(254, 196, 17, 0.2), transparent);
+  animation: scanLine 10s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Grid overlay dourado sutil + topo dourado fixo — herda o visual do Hero */
+.section-grid {
+  position: relative;
+}
+
+.section-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(254, 196, 17, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(254, 196, 17, 0.015) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Linha de acento dourado vertical no canto esquerdo de cabeçalhos */
+.gold-accent-line {
+  width: 24px;
+  height: 1px;
+  background: linear-gradient(to right, rgba(254, 196, 17, 0.6), transparent);
+}
