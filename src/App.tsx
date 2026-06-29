@@ -8,7 +8,7 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Navbar from "./components/Navbar.tsx";
 import ScrollProgress from "./components/ScrollProgress.tsx";
-import CursorGlow from "./components/CursorGlow.tsx";
+import IntroOverlay from "./components/IntroOverlay.tsx";
 import { useSmoothScroll } from "./hooks/use-smooth-scroll.ts";
 
 const queryClient = new QueryClient();
@@ -24,7 +24,7 @@ const App = () => {
         <BrowserRouter>
           <div className="relative min-h-screen bg-background">
             <ScrollProgress />
-            <CursorGlow />
+            <IntroOverlay />
             <Navbar />
             <AnimatePresence mode="wait">
               <Routes>

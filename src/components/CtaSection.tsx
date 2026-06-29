@@ -137,7 +137,7 @@ const CtaSection = () => {
               </MagneticButton>
 
               <p className="text-[0.65rem] text-white/45 tracking-wide mt-4 text-center">
-                Leva menos de 10 minutos. Gratuito, sem compromisso.
+                Questionário rápido de qualificação. Leva 2 minutos.
               </p>
             </div>
           </motion.div>

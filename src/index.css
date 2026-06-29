@@ -231,20 +231,90 @@ html {
   color: #fff;
 }
 
-/* Hide default cursor on desktop when custom cursor is active */
-@media (hover: hover) and (pointer: fine) {
-  @media (min-width: 768px) {
-    body {
-      cursor: none;
-    }
+/* Cursor customizado removido - maioria dos clientes acessa via mobile */
 
-    a,
-    button,
-    [role="button"],
-    input,
-    textarea,
-    select {
-      cursor: none;
-    }
+/* ===== Animação de abertura impactante ===== */
+@keyframes introOverlay {
+  0% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes introLogo {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.1) translateY(-10px);
+  }
+}
+
+@keyframes introReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    filter: blur(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes introLine {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes introGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes textRevealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes maskReveal {
+  0% {
+    clip-path: inset(0 0 100% 0);
+  }
+
+  100% {
+    clip-path: inset(0 0 0% 0);
   }
 }
