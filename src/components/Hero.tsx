@@ -281,18 +281,6 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2 pointer-events-none"
-        aria-hidden="true"
-      >
-        <span className="text-[0.6rem] tracking-[0.3em] uppercase text-white/30">Scroll</span>
-        <div className="w-px h-10 bg-gradient-to-b from-primary/40 to-transparent scroll-indicator" />
-      </motion.div>
-
       {/* Bottom separator */}
       <div className="absolute bottom-0 left-0 right-0 h-px" aria-hidden="true"
         style={{ background: 'linear-gradient(to right, transparent, rgba(254,196,17,0.15), transparent)' }}
