@@ -153,7 +153,7 @@ const Hero = () => {
           filter: 'blur(80px)',
         }} />
         {/* Cybercore animated grid background */}
-        <CybercoreBackground beamCount={50} /></div>
+        <CybercoreBackground beamCount={30} /></div>
 
       {/* Vertical grid lines */}
       <div className="absolute inset-0 flex justify-between px-[12.5vw] pointer-events-none" aria-hidden="true">
@@ -189,12 +189,12 @@ const Hero = () => {
 
           {/* Headline */}
           <h1 className="font-display text-[clamp(3.8rem,10vw,8.5rem)] leading-[0.9] tracking-[0.02em]">
-            <motion.span {...fadeUp(0.3)} className="block text-white">
+            <motion.span {...fadeUp(0.3)} className="block text-white" style={{ textShadow: "0 2px 30px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.5)" }}>
               Seu negócio
             </motion.span>
             <motion.em
               {...fadeUp(0.45)}
-              className="not-italic block text-shimmer"
+              className="not-italic block text-shimmer" style={{ textShadow: "0 2px 30px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.5)" }}
             >
               merece mais<br />
               que botões.
@@ -208,7 +208,7 @@ const Hero = () => {
 
           <motion.p
             {...fadeUp(0.8)}
-            className="max-w-[480px] mt-8 text-[1rem] font-light leading-[1.85] text-white/65"
+            className="max-w-[480px] mt-8 text-[1rem] font-light leading-[1.85] text-white/85" style={{ textShadow: "0 1px 20px rgba(0,0,0,0.9)" }}
           >
             A maioria das agências entrega layout. A gente estuda o seu mercado, entende onde você está perdendo dinheiro e monta o que vai fazer seu próximo mês ser melhor que o atual.
           </motion.p>
