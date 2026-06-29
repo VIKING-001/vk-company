@@ -439,25 +439,34 @@ html {
   animation: cybercoreMainGlow 3s ease-in-out infinite alternate;
 }
 
-/* Container dos feixes de luz */
-.cybercore-beam-container {
+/* Container dos streams de dados */
+.cybercore-data-container {
   position: absolute;
   inset: 0;
+  overflow: hidden;
 }
 
-/* Feixes de luz individuais */
-.cybercore-beam {
+/* Streams de dados individuais (pixels de anuncios/IA subindo) */
+.cybercore-data-stream {
   position: absolute;
-  bottom: 0;
-  height: 100%;
-  background: linear-gradient(to top, rgba(254, 196, 17, 0.6), transparent);
-  animation-name: cybercoreRise, cybercoreFade;
-  animation-timing-function: ease-out, ease-in-out;
-  animation-iteration-count: infinite, infinite;
+  bottom: -100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: rgba(254, 196, 17, 0.5);
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(254, 196, 17, 0.4);
+  animation-name: cybercoreRise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  white-space: nowrap;
 }
 
-.cybercore-beam.secondary {
-  background: linear-gradient(to top, rgba(255, 184, 108, 0.4), transparent);
+.cybercore-data-stream span {
+  display: block;
 }
 
 /* Responsivo: reduz intensidade no mobile */
@@ -467,7 +476,7 @@ html {
     background-size: 60px 60px;
   }
 
-  .cybercore-beam {
-    opacity: 0.5;
+  .cybercore-data-stream {
+    opacity: 0.4;
   }
 }

@@ -153,7 +153,7 @@ const Hero = () => {
           filter: 'blur(80px)',
         }} />
         {/* Cybercore animated grid background */}
-        <CybercoreBackground beamCount={30} /></div>
+        <CybercoreBackground streamCount={25} /></div>
 
       {/* Vertical grid lines */}
       <div className="absolute inset-0 flex justify-between px-[12.5vw] pointer-events-none" aria-hidden="true">
