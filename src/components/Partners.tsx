@@ -44,7 +44,7 @@ const Partners = () => {
   return (
     <section
       aria-label="Parceiros de sucesso"
-      className="px-[5vw] py-12 md:py-[10vh] bg-background section-scan section-grid"
+      className="px-[5vw] py-12 md:py-[10vh] bg-background border-t border-white/5"
     >
       <div className="max-w-[1100px] mx-auto">
         {/* Header */}
@@ -75,10 +75,10 @@ const Partners = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-                className={`bg-background p-6 lg:p-8 flex flex-col gap-4 group border-t-0 border-l-0 hover:bg-secondary/40 hover:shadow-[inset_0_0_40px_rgba(254,196,17,0.04),0_0_0_1px_rgba(254,196,17,0.08)] transition-all duration-300`}
+                className={`bg-background p-6 lg:p-8 flex flex-col gap-4 group border-t-0 border-l-0 transition-all duration-300 partner-card`}
               >
                 {/* Icon */}
-                <div className={`w-10 h-10 rounded-sm bg-gradient-to-br ${p.color} border ${p.accent} flex items-center justify-center`}>
+                <div className={`w-10 h-10 rounded-sm bg-gradient-to-br ${p.color} border ${p.accent} flex items-center justify-center partner-icon`}>
                   <Icon size={18} className="text-primary" strokeWidth={1.5} />
                 </div>
 

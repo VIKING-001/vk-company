@@ -39,7 +39,7 @@ const CaseSection = () => {
   return (
     <section
       aria-label="Cases de execução"
-      className="bg-card/10 overflow-hidden section-scan section-grid"
+      className="bg-card/10 overflow-hidden border-t border-border"
     >
       <div
         className="overflow-hidden"

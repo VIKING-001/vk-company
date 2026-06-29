@@ -493,55 +493,172 @@ html {
   }
 }
 
-/* ===== Seções: grid overlay, scan line e bordas douradas ===== */
+/* ===== Efeitos impactantes nos elementos existentes ===== */
 
-/* Scan line animada que percorre a seção — efeito HERDADO do Hero */
-@keyframes scanLine {
-  0% { top: 0; opacity: 0; }
-  5% { opacity: 0.25; }
-  10% { opacity: 0.05; }
-  92% { opacity: 0.05; }
-  95% { opacity: 0.25; }
-  100% { top: 100%; opacity: 0; }
+/* Títulos de seção com brilho — text-shimmer já existe no .text-shimmer, complementamos */
+.section-title-glow {
+  text-shadow: 0 0 40px rgba(254, 196, 17, 0.15), 0 0 80px rgba(254, 196, 17, 0.08);
 }
 
-.section-scan {
-  position: relative;
-  overflow: hidden;
+/* Card de serviço — hover impactante */
+.service-card {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.section-scan::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(254, 196, 17, 0.2), transparent);
-  animation: scanLine 10s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Grid overlay dourado sutil + topo dourado fixo — herda o visual do Hero */
-.section-grid {
-  position: relative;
-}
-
-.section-grid::after {
+.service-card::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(254, 196, 17, 0.015) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(254, 196, 17, 0.015) 1px, transparent 1px);
-  background-size: 80px 80px;
+  border: 1px solid transparent;
+  border-radius: inherit;
   pointer-events: none;
-  z-index: 0;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* Linha de acento dourado vertical no canto esquerdo de cabeçalhos */
-.gold-accent-line {
-  width: 24px;
-  height: 1px;
-  background: linear-gradient(to right, rgba(254, 196, 17, 0.6), transparent);
+.service-card:hover::after {
+  border-color: rgba(254, 196, 17, 0.25);
+  box-shadow: inset 0 0 60px rgba(254, 196, 17, 0.06), 0 0 40px rgba(254, 196, 17, 0.08);
 }
+
+/* Barra dourada que SOBE no card em vez de só escalar */
+.service-card .gold-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FEC411, #FFD860, #FEC411);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 0 20px rgba(254, 196, 17, 0.4);
+}
+
+.service-card:hover .gold-bar {
+  transform: scaleX(1);
+}
+
+/* Glow no ícone do service card */
+.service-card .service-icon {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 12px rgba(254, 196, 17, 0.5));
+  color: #FEC411;
+}
+
+/* Brilho no número do card */
+.service-card .service-num {
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+.service-card:hover .service-num {
+  color: rgba(254, 196, 17, 0.15);
+  text-shadow: 0 0 30px rgba(254, 196, 17, 0.1);
+}
+
+/* Número do processo — glow ring pulsante */
+.process-step .step-circle {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.process-step .step-circle::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transition: border-color 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
+}
+
+.process-step:hover .step-circle {
+  background: #FEC411;
+  color: #0F0F10;
+  border-color: #FEC411;
+  box-shadow: 0 0 30px rgba(254, 196, 17, 0.3);
+  transform: scale(1.08);
+}
+
+/* Número grande de fundo no processo */
+.process-step .step-bg-num {
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.process-step:hover .step-bg-num {
+  color: rgba(254, 196, 17, 0.1);
+  transform: scale(1.1);
+}
+
+/* Citação nos depoimentos — aspas douradas dramáticas */
+.testimonial-quote-mark {
+  font-size: 5rem;
+  line-height: 0.7;
+  color: rgba(254, 196, 17, 0.2);
+  text-shadow: 0 0 40px rgba(254, 196, 17, 0.1);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+  font-family: "Georgia", serif;
+  user-select: none;
+}
+
+.testimonial-card:hover .testimonial-quote-mark {
+  color: rgba(254, 196, 17, 0.35);
+  text-shadow: 0 0 60px rgba(254, 196, 17, 0.2);
+}
+
+/* Estrela pulsante */
+@keyframes starPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); filter: brightness(1.3); }
+}
+
+.testimonial-star {
+  animation: starPulse 2s ease-in-out infinite;
+}
+
+.testimonial-star:nth-child(2) { animation-delay: 0.3s; }
+.testimonial-star:nth-child(3) { animation-delay: 0.6s; }
+.testimonial-star:nth-child(4) { animation-delay: 0.9s; }
+.testimonial-star:nth-child(5) { animation-delay: 1.2s; }
+
+/* Stats — flash dourado no número */
+@keyframes goldFlash {
+  0% { text-shadow: 0 0 0 rgba(254, 196, 17, 0); }
+  30% { text-shadow: 0 0 60px rgba(254, 196, 17, 0.4), 0 0 120px rgba(254, 196, 17, 0.2); }
+  100% { text-shadow: 0 0 0 rgba(254, 196, 17, 0); }
+}
+
+.stat-number {
+  animation: goldFlash 2s ease-out forwards;
+}
+
+/* CTA — glow pulsante mais intenso */
+@keyframes ctaGlowPulse {
+  0%, 100% { opacity: 0.6; filter: blur(40px); }
+  50% { opacity: 1; filter: blur(50px); }
+}
+
+.cta-glow-pulse {
+  animation: ctaGlowPulse 3s ease-in-out infinite;
+}
+
+/* Parceiros — hover com glow dourado */
+.partner-card {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.partner-card:hover {
+  box-shadow: inset 0 0 60px rgba(254, 196, 17, 0.06), 0 0 0 1px rgba(254, 196, 17, 0.12);
+  background: rgba(254, 196, 17, 0.02);
+}
+
+.partner-card .partner-icon {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.partner-card:hover .partner-icon {
+  box-shadow: 0 0 20px rgba(254, 196, 17, 0.2);
+}
+

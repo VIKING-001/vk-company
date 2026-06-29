@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section
       aria-label="Sobre o fundador"
-      className="px-[5vw] py-12 md:py-[12vh] bg-background relative overflow-hidden section-scan section-grid"
+      className="px-[5vw] py-12 md:py-[12vh] bg-background relative overflow-hidden border-t border-border"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
         {/* Photo Container */}
@@ -51,7 +51,7 @@ const About = () => {
           <p className="text-[0.68rem] tracking-[0.25em] uppercase text-primary mb-6">Sobre o fundador</p>
           <h2 className="font-display text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[1.1] mb-8">
             Estratégia que<br />
-            <span className="text-primary italic">vem da prática.</span>
+            <span className="text-primary italic section-title-glow">vem da prática.</span>
           </h2>
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-white/70 font-light">
             <p>

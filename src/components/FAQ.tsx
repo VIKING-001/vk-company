@@ -76,7 +76,7 @@ const FAQ = () => {
   return (
     <section
       aria-label="Perguntas frequentes"
-      className="px-[5vw] py-12 md:py-[10vh] bg-secondary/20 section-scan section-grid"
+      className="px-[5vw] py-12 md:py-[10vh] bg-secondary/20 border-t border-white/5"
     >
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-24 max-w-[1000px] mx-auto">
         <motion.div
@@ -90,7 +90,7 @@ const FAQ = () => {
           </p>
           <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] tracking-[0.02em] leading-[0.9] mb-6">
             Perguntas<br />
-            <span className="text-primary italic">respondidas<br />com clareza.</span>
+            <span className="text-primary italic section-title-glow">respondidas<br />com clareza.</span>
           </h2>
           <p className="text-[0.88rem] text-white/35 leading-relaxed">
             Sem esconder nada.

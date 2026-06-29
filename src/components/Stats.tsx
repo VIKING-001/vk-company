@@ -38,7 +38,7 @@ const StatItem = ({
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
       className="flex flex-col items-center text-center px-4 lg:px-10 py-8"
     >
-      <span className="font-display text-[clamp(2rem,4vw,3.2rem)] text-primary leading-none mb-2 tabular-nums">
+      <span className="font-display text-[clamp(2rem,4vw,3.2rem)] text-primary leading-none mb-2 tabular-nums stat-number">
         {prefix}{count}{suffix}
       </span>
       <span className="text-[0.68rem] tracking-[0.18em] uppercase text-white/55 mt-1">
@@ -53,7 +53,7 @@ const Stats = () => {
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="relative overflow-hidden section-scan section-grid">
+    <section ref={ref} className="relative overflow-hidden border-t border-b border-white/5">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: "radial-gradient(ellipse 60% 100% at 50% 0%, rgba(254,196,17,0.08) 0%, transparent 100%)" }}

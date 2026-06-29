@@ -37,7 +37,7 @@ const Process = () => {
   return (
     <section
       aria-label="Nosso processo de trabalho"
-      className="px-[5vw] py-12 md:py-[10vh] bg-background overflow-hidden section-scan section-grid"
+      className="px-[5vw] py-12 md:py-[10vh] bg-background overflow-hidden border-t border-white/5"
     >
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12 md:mb-20">
         <motion.div
@@ -48,7 +48,7 @@ const Process = () => {
         >
           <p className="text-[0.68rem] tracking-[0.25em] uppercase text-primary mb-3">Como trabalhamos</p>
           <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] tracking-[0.02em] leading-[0.9]">
-            Nosso<br /><span className="text-primary italic">Processo</span>
+            Nosso<br /><span className="text-primary italic section-title-glow">Processo</span>
           </h2>
         </motion.div>
         <motion.p
@@ -74,11 +74,11 @@ const Process = () => {
           <motion.li
             key={s.num}
             variants={itemVariants}
-            className="group bg-secondary hover:bg-card transition-colors duration-300 p-8 lg:p-10 relative overflow-hidden flex flex-col gap-5"
+            className="group bg-secondary hover:bg-card transition-colors duration-300 p-8 lg:p-10 relative overflow-hidden flex flex-col gap-5 process-step"
           >
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-            <div className="w-12 h-12 border border-border rounded-full flex items-center justify-center font-display text-base text-primary bg-background group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300 flex-shrink-0">
+            <div className="w-14 h-14 border border-border rounded-full flex items-center justify-center font-display text-base text-primary bg-background flex-shrink-0 step-circle">
               {s.num}
             </div>
 
@@ -93,7 +93,7 @@ const Process = () => {
             </div>
 
             <div
-              className="font-display text-[4rem] leading-none text-white/3 group-hover:text-primary/6 transition-colors duration-300 select-none mt-auto self-end"
+              className="font-display text-[5rem] leading-none text-white/3 select-none mt-auto self-end step-bg-num"
               aria-hidden="true"
             >
               {s.num}

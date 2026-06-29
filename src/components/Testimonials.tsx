@@ -35,7 +35,7 @@ const Testimonials = () => {
   return (
     <section
       aria-label="Depoimentos de clientes"
-      className="px-[5vw] py-12 md:py-[10vh] bg-background section-scan section-grid"
+      className="px-[5vw] py-12 md:py-[10vh] bg-background border-t border-white/5"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ const Testimonials = () => {
         </p>
         <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] tracking-[0.02em] leading-[0.9]">
           Quem já<br />
-          <span className="text-primary italic">passou por aqui.</span>
+          <span className="text-primary italic section-title-glow">passou por aqui.</span>
         </h2>
       </motion.div>
 
@@ -64,17 +64,17 @@ const Testimonials = () => {
           <motion.div
             key={i}
             variants={itemVariants}
-            className="group relative bg-secondary p-8 lg:p-10 hover:bg-card transition-colors duration-300 overflow-hidden flex flex-col"
+            className="group relative bg-secondary p-8 lg:p-10 hover:bg-card transition-colors duration-300 overflow-hidden flex flex-col testimonial-card"
           >
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
-            <div className="font-display text-[4.5rem] leading-none text-primary/20 mb-1 -mt-3 select-none" aria-hidden="true">
+            <div className="testimonial-quote-mark mb-1 -mt-3 select-none" aria-hidden="true">
               "
             </div>
 
             <div className="flex gap-0.5 mb-5" aria-label="5 estrelas">
               {Array.from({ length: 5 }).map((_, j) => (
-                <span key={j} className="text-primary text-[0.8rem]">★</span>
+                <span key={j} className="text-primary text-[0.8rem] testimonial-star">★</span>
               ))}
             </div>
 

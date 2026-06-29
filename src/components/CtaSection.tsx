@@ -19,13 +19,13 @@ const CtaSection = () => {
     <section
       ref={ref}
       aria-label="Chamada para ação — entre em contato"
-      className="px-[5vw] py-16 md:py-[16vh] bg-background relative overflow-hidden section-scan"
+      className="px-[5vw] py-16 md:py-[16vh] bg-background relative overflow-hidden border-t border-white/5"
     >
       {/* Background dramático */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        {/* Glow central forte */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[60%]" style={{
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(254,196,17,0.12) 0%, rgba(254,196,17,0.04) 50%, transparent 70%)',
+        {/* Glow central forte pulsante */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[60%] cta-glow-pulse" style={{
+          background: 'radial-gradient(ellipse at 50% 0%, rgba(254,196,17,0.15) 0%, rgba(254,196,17,0.05) 50%, transparent 70%)',
           filter: 'blur(40px)',
         }} />
         {/* Linha brilhante no topo */}

@@ -4,7 +4,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="px-[5vw] py-16 flex flex-col sm:flex-row justify-between items-center gap-10 bg-card section-scan">
+    <footer className="px-[5vw] py-16 flex flex-col sm:flex-row justify-between items-center gap-10 bg-card border-t border-white/5">
       <div className="flex items-center">
         <img
           src={logo}
