@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "../assets/logo.png";
 import { DIAGNOSTICO_LINK } from "../lib/constants";
+import MagneticButton from "./MagneticButton";
 
 const navLinks = [
   { label: "Serviços", href: "#servicos" },
@@ -38,11 +39,10 @@ const Navbar = () => {
       aria-label="Navegação principal"
       animate={hidden ? { y: "-100%", opacity: 0 } : { y: 0, opacity: 1 }}
       transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-      className={`fixed top-0 left-0 right-0 z-[1000] flex items-center justify-between px-[5vw] will-change-transform ${
-        scrolled
-          ? "py-3 bg-background/90 backdrop-blur-xl border-b border-white/8"
-          : "py-6 bg-transparent border-b border-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-[1000] flex items-center justify-between px-[5vw] will-change-transform ${scrolled
+        ? "py-3 bg-background/90 backdrop-blur-xl border-b border-white/8"
+        : "py-6 bg-transparent border-b border-transparent"
+        }`}
       style={{ transition: "padding 0.4s ease, background-color 0.4s ease, border-color 0.4s ease" }}
     >
       <Link
@@ -68,25 +68,25 @@ const Navbar = () => {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-[0.72rem] tracking-[0.14em] uppercase text-white/45 hover:text-white/90 transition-colors duration-200"
+                className="group relative text-[0.72rem] tracking-[0.14em] uppercase text-white/45 hover:text-white/90 transition-colors duration-200"
               >
                 {link.label}
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all duration-300 group-hover:w-full" />
               </a>
             </li>
           ))}
         </ul>
 
-        <motion.a
+        <MagneticButton
           href={DIAGNOSTICO_LINK}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Fazer diagnóstico gratuito"
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.96 }}
+          strength={0.25}
           className="bg-primary text-primary-foreground font-bold text-[0.72rem] md:text-[0.75rem] tracking-[0.14em] uppercase px-5 py-2.5 md:px-7 md:py-3 rounded-sm hover:bg-primary/90 transition-colors duration-200"
         >
           Diagnóstico gratuito
-        </motion.a>
+        </MagneticButton>
       </div>
     </motion.nav>
   );

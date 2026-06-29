@@ -1,13 +1,14 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useRef } from "react";
 import logo from "../assets/logo.png";
 import fotoHero from "../assets/foto-perfil.jpg";
 import { DIAGNOSTICO_LINK } from "../lib/constants";
+import MagneticButton from "./MagneticButton";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1], delay },
+  transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] as const, delay },
 });
 
 // Linha horizontal animada
@@ -116,11 +117,26 @@ const Hero = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, 60]);
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
+  // Mouse parallax para o conteúdo
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const photoX = useSpring(mouseX, { stiffness: 80, damping: 20 });
+  const photoY = useSpring(mouseY, { stiffness: 80, damping: 20 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const { innerWidth, innerHeight } = window;
+    const x = (e.clientX / innerWidth - 0.5) * 20;
+    const yVal = (e.clientY / innerHeight - 0.5) * 20;
+    mouseX.set(x);
+    mouseY.set(yVal);
+  };
+
   return (
     <section
       ref={ref}
       id="inicio"
       aria-label="Seção principal"
+      onMouseMove={handleMouseMove}
       className="min-h-screen flex flex-col justify-end px-[5vw] pb-[8vh] relative overflow-hidden"
     >
       {/* Background layers */}
@@ -181,13 +197,7 @@ const Hero = () => {
             </motion.span>
             <motion.em
               {...fadeUp(0.45)}
-              className="not-italic block"
-              style={{
-                background: 'linear-gradient(135deg, #FEC411 0%, #FFD860 50%, #FEC411 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
+              className="not-italic block text-shimmer"
             >
               merece mais<br />
               que botões.
@@ -258,17 +268,32 @@ const Hero = () => {
             </div>
             <div>
               <div className="flex gap-0.5 mb-0.5">
-                {[1,2,3,4,5].map(i => <span key={i} className="text-primary text-[0.65rem]">★</span>)}
+                {[1, 2, 3, 4, 5].map(i => <span key={i} className="text-primary text-[0.65rem]">★</span>)}
               </div>
               <p className="text-[0.65rem] text-white/35 tracking-wide">+100 negócios transformados</p>
             </div>
           </motion.div>
         </div>
 
-        {/* Desktop Photo */}
-        <div className="hidden lg:block">
+        {/* Desktop Photo com parallax do mouse */}
+        <motion.div
+          style={{ x: photoX, y: photoY }}
+          className="hidden lg:block"
+        >
           <PhotoBlock />
-        </div>
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2 pointer-events-none"
+        aria-hidden="true"
+      >
+        <span className="text-[0.6rem] tracking-[0.3em] uppercase text-white/30">Scroll</span>
+        <div className="w-px h-10 bg-gradient-to-b from-primary/40 to-transparent scroll-indicator" />
       </motion.div>
 
       {/* Bottom separator */}
