@@ -31,7 +31,7 @@ function Badge() {
     <motion.div
       initial={{ opacity: 0, y: 12, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, delay: BASE_DELAY + 0.2, ease: [0.22, 1, 0.36, 1] }}
       className="inline-flex items-center gap-2.5 mb-6"
     >
       <div className="relative">
@@ -83,14 +83,14 @@ const PhotoBlock = () => {
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.7, duration: 0.4, ease: "easeOut" }}
+        transition={{ delay: BASE_DELAY + 0.8, duration: 0.4, ease: "easeOut" }}
         className="absolute -bottom-3 -right-3 w-14 h-14 border-b-2 border-r-2 border-primary/50 z-20"
         aria-hidden="true"
       />
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.8, duration: 0.4, ease: "easeOut" }}
+        transition={{ delay: BASE_DELAY + 0.9, duration: 0.4, ease: "easeOut" }}
         className="absolute -top-3 -left-3 w-14 h-14 border-t-2 border-l-2 border-primary/25 z-20"
         aria-hidden="true"
       />
@@ -99,7 +99,7 @@ const PhotoBlock = () => {
       <motion.div
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ delay: BASE_DELAY + 1.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className="absolute bottom-6 -left-4 xl:-left-8 z-30 hidden sm:block"
       >
         <div className="bg-primary px-4 py-3 shadow-[0_8px_30px_rgba(254,196,17,0.4)]">
@@ -192,7 +192,7 @@ const Hero = () => {
 
           {/* Headline */}
           <h1 className="font-display text-[clamp(3.8rem,10vw,8.5rem)] leading-[0.9] tracking-[0.02em]">
-            <motion.span {...fadeUp(0.3)} className="block text-white">
+            <motion.span initial={{ opacity: 0, y: 80, clipPath: "inset(0 0 100% 0)" }} animate={{ opacity: 1, y: 0, clipPath: "inset(0 0 0% 0)" }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] as const, delay: BASE_DELAY + 0.4 }} className="block text-white overflow-hidden">
               Seu negócio
             </motion.span>
             <motion.em
@@ -210,14 +210,14 @@ const Hero = () => {
           </div>
 
           <motion.p
-            {...fadeUp(0.55)}
+            {...fadeUp(0.8)}
             className="max-w-[480px] mt-8 text-[1rem] font-light leading-[1.85] text-white/65"
           >
             A maioria das agências entrega layout. A gente estuda o seu mercado, entende onde você está perdendo dinheiro e monta o que vai fazer seu próximo mês ser melhor que o atual.
           </motion.p>
 
           <motion.div
-            {...fadeUp(0.65)}
+            {...fadeUp(1)}
             className="flex flex-wrap items-center gap-6 mt-12"
           >
             {/* Primary CTA */}
@@ -256,7 +256,7 @@ const Hero = () => {
 
           {/* Social proof */}
           <motion.div
-            {...fadeUp(0.78)}
+            {...fadeUp(1.2)}
             className="flex items-center gap-4 mt-10"
           >
             <div className="flex -space-x-2">
@@ -288,7 +288,7 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
+        transition={{ delay: BASE_DELAY + 1.8, duration: 0.8 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2 pointer-events-none"
         aria-hidden="true"
       >
