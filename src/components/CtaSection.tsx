@@ -2,11 +2,13 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle } from "lucide-react";
 import { DIAGNOSTICO_LINK } from "../lib/constants";
+import MagneticButton from "./MagneticButton";
 
 const features = [
-  "Gratuito e sem compromisso",
-  "Menos de 10 minutos",
-  "Direção clara antes de qualquer proposta",
+  "Diagnóstico gratuito na primeira conversa",
+  "Sem contrato de fidelidade",
+  "Proposta só se fizer sentido pro seu caso",
+  "Acompanhamento semanal — não relatório mensal bonito",
 ];
 
 const CtaSection = () => {
@@ -17,7 +19,7 @@ const CtaSection = () => {
     <section
       ref={ref}
       aria-label="Chamada para ação — entre em contato"
-      className="px-[5vw] py-16 md:py-[16vh] border-t border-white/5 bg-background relative overflow-hidden"
+      className="px-[5vw] py-16 md:py-[16vh] bg-background relative overflow-hidden section-scan"
     >
       {/* Background dramático */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -47,21 +49,16 @@ const CtaSection = () => {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="text-[0.68rem] tracking-[0.28em] uppercase mb-6" style={{ color: 'hsl(42 100% 55%)' }}>
-              A próxima decisão pode começar agora.
+              Pronto para começar?
             </p>
             <h2 className="font-display text-[clamp(2.8rem,6.5vw,5.5rem)] leading-[0.9] mb-8">
-              Descubra onde o seu<br />
-              <span style={{
-                background: 'linear-gradient(135deg, #FEC411 0%, #FFD860 60%, #FEC411 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}>
-                marketing está<br />deixando dinheiro na mesa.
+              Se fizer sentido,<br />
+              <span className="text-shimmer">
+                a gente começa<br />essa semana.
               </span>
             </h2>
             <p className="text-[0.9rem] text-white/60 leading-[1.85] max-w-[340px]">
-              Diagnóstico gratuito. Direção real. Sem pitch de venda.
+              Manda uma mensagem. Se não for o momento certo ou o perfil não se encaixar, a gente fala com honestidade. Sem pitch de venda.
             </p>
 
             {/* Metrics row */}
@@ -115,32 +112,32 @@ const CtaSection = () => {
                 ))}
               </ul>
 
-              {/* CTA Button */}
-              <motion.a
+              {/* CTA Button com efeito magnético */}
+              <MagneticButton
                 href={DIAGNOSTICO_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Fazer diagnóstico gratuito"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.97 }}
+                strength={0.15}
                 className="relative overflow-hidden flex items-center justify-between gap-4 font-bold text-[0.8rem] tracking-[0.16em] uppercase px-8 py-5 w-full rounded-sm text-[#0F0F10] group"
-                style={{
-                  background: 'linear-gradient(135deg, #FEC411 0%, #FFD043 50%, #FEC411 100%)',
-                  boxShadow: '0 8px 32px rgba(254,196,17,0.35), inset 0 1px 0 rgba(255,255,255,0.2)',
-                }}
-                onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 14px 48px rgba(254,196,17,0.55), inset 0 1px 0 rgba(255,255,255,0.25)')}
-                onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 8px 32px rgba(254,196,17,0.35), inset 0 1px 0 rgba(255,255,255,0.2)')}
               >
-                <span className="relative z-10 font-bold">Fazer diagnóstico gratuito</span>
+                <span
+                  className="absolute inset-0"
+                  style={{
+                    background: 'linear-gradient(135deg, #FEC411 0%, #FFD043 50%, #FEC411 100%)',
+                    boxShadow: '0 8px 32px rgba(254,196,17,0.35), inset 0 1px 0 rgba(255,255,255,0.2)',
+                  }}
+                />
+                <span className="relative z-10 font-bold">Diagnóstico gratuito</span>
                 <span className="relative z-10 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">→</span>
                 {/* Shine */}
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
                   style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)' }}
                 />
-              </motion.a>
+              </MagneticButton>
 
               <p className="text-[0.65rem] text-white/45 tracking-wide mt-4 text-center">
-                Menos de 10 minutos. Gratuito, sem compromisso.
+                Question�rio r�pido de qualifica��o. Leva 2 minutos.
               </p>
             </div>
           </motion.div>

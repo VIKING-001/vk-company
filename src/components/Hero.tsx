@@ -1,13 +1,15 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useRef } from "react";
 import logo from "../assets/logo.png";
 import fotoHero from "../assets/foto-perfil.jpg";
 import { DIAGNOSTICO_LINK } from "../lib/constants";
+import MagneticButton from "./MagneticButton";
+import CybercoreBackground from "./ui/cybercore-section-hero";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1], delay },
+  transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] as const, delay },
 });
 
 // Linha horizontal animada
@@ -30,7 +32,7 @@ function Badge() {
     <motion.div
       initial={{ opacity: 0, y: 12, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
       className="inline-flex items-center gap-2.5 mb-6"
     >
       <div className="relative">
@@ -38,7 +40,7 @@ function Badge() {
         <div className="relative flex items-center gap-2 border border-primary/25 bg-primary/8 backdrop-blur-sm px-4 py-1.5 rounded-full">
           <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
           <span className="text-[0.65rem] tracking-[0.22em] uppercase text-primary font-medium">
-            Estratégia, criação e performance na mesma mesa.
+            Agência Digital Estratégica
           </span>
         </div>
       </div>
@@ -82,14 +84,14 @@ const PhotoBlock = () => {
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.7, duration: 0.4, ease: "easeOut" }}
+        transition={{ delay: 0.8, duration: 0.4, ease: "easeOut" }}
         className="absolute -bottom-3 -right-3 w-14 h-14 border-b-2 border-r-2 border-primary/50 z-20"
         aria-hidden="true"
       />
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.8, duration: 0.4, ease: "easeOut" }}
+        transition={{ delay: 0.9, duration: 0.4, ease: "easeOut" }}
         className="absolute -top-3 -left-3 w-14 h-14 border-t-2 border-l-2 border-primary/25 z-20"
         aria-hidden="true"
       />
@@ -98,7 +100,7 @@ const PhotoBlock = () => {
       <motion.div
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ delay: 1.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className="absolute bottom-6 -left-4 xl:-left-8 z-30 hidden sm:block"
       >
         <div className="bg-primary px-4 py-3 shadow-[0_8px_30px_rgba(254,196,17,0.4)]">
@@ -116,11 +118,26 @@ const Hero = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, 60]);
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
+  // Mouse parallax para o conteúdo
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const photoX = useSpring(mouseX, { stiffness: 80, damping: 20 });
+  const photoY = useSpring(mouseY, { stiffness: 80, damping: 20 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const { innerWidth, innerHeight } = window;
+    const x = (e.clientX / innerWidth - 0.5) * 20;
+    const yVal = (e.clientY / innerHeight - 0.5) * 20;
+    mouseX.set(x);
+    mouseY.set(yVal);
+  };
+
   return (
     <section
       ref={ref}
       id="inicio"
       aria-label="Seção principal"
+      onMouseMove={handleMouseMove}
       className="min-h-screen flex flex-col justify-end px-[5vw] pb-[8vh] relative overflow-hidden"
     >
       {/* Background layers */}
@@ -135,12 +152,8 @@ const Hero = () => {
           background: 'radial-gradient(ellipse at 20% 80%, rgba(254,196,17,0.06) 0%, transparent 60%)',
           filter: 'blur(80px)',
         }} />
-        {/* Noise grain overlay */}
-        <div className="absolute inset-0 opacity-[0.035]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
-          backgroundSize: '128px',
-        }} />
-      </div>
+        {/* Cybercore animated grid background */}
+        <CybercoreBackground streamCount={25} /></div>
 
       {/* Vertical grid lines */}
       <div className="absolute inset-0 flex justify-between px-[12.5vw] pointer-events-none" aria-hidden="true">
@@ -176,20 +189,15 @@ const Hero = () => {
 
           {/* Headline */}
           <h1 className="font-display text-[clamp(3.8rem,10vw,8.5rem)] leading-[0.9] tracking-[0.02em]">
-            <motion.span {...fadeUp(0.3)} className="block text-white">
-              Marketing que move
+            <motion.span {...fadeUp(0.3)} className="block text-white" style={{ textShadow: "0 2px 30px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.5)" }}>
+              Seu negócio
             </motion.span>
             <motion.em
               {...fadeUp(0.45)}
-              className="not-italic block"
-              style={{
-                background: 'linear-gradient(135deg, #FEC411 0%, #FFD860 50%, #FEC411 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
+              className="not-italic block text-shimmer" style={{ textShadow: "0 2px 30px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.5)" }}
             >
-              o caixa. Não o ego.
+              merece mais<br />
+              que botões.
             </motion.em>
           </h1>
 
@@ -199,14 +207,14 @@ const Hero = () => {
           </div>
 
           <motion.p
-            {...fadeUp(0.55)}
-            className="max-w-[480px] mt-8 text-[1rem] font-light leading-[1.85] text-white/65"
+            {...fadeUp(0.8)}
+            className="max-w-[480px] mt-8 text-[1rem] font-light leading-[1.85] text-white/85" style={{ textShadow: "0 1px 20px rgba(0,0,0,0.9)" }}
           >
-            Entramos no seu negócio, encontramos os pontos que travam o crescimento e executamos a estratégia digital que transforma atenção em receita.
+            A maioria das agências entrega layout. A gente estuda o seu mercado, entende onde você está perdendo dinheiro e monta o que vai fazer seu próximo mês ser melhor que o atual.
           </motion.p>
 
           <motion.div
-            {...fadeUp(0.65)}
+            {...fadeUp(1)}
             className="flex flex-wrap items-center gap-6 mt-12"
           >
             {/* Primary CTA */}
@@ -214,7 +222,7 @@ const Hero = () => {
               href={DIAGNOSTICO_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Fazer diagnóstico gratuito"
+              aria-label="Iniciar questionário de qualificação"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="relative overflow-hidden inline-flex items-center gap-3 text-primary-foreground font-bold text-[0.8rem] tracking-[0.16em] uppercase px-10 py-5 rounded-sm group"
@@ -225,7 +233,7 @@ const Hero = () => {
               onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 14px 48px rgba(254,196,17,0.5), 0 4px 16px rgba(254,196,17,0.3), inset 0 1px 0 rgba(255,255,255,0.25)')}
               onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 8px 32px rgba(254,196,17,0.3), 0 2px 8px rgba(254,196,17,0.2), inset 0 1px 0 rgba(255,255,255,0.2)')}
             >
-              <span className="relative z-10">Começar diagnóstico</span>
+              <span className="relative z-10">Iniciar qualificação</span>
               <span className="relative z-10 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">→</span>
               {/* Shine sweep */}
               <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
@@ -245,7 +253,7 @@ const Hero = () => {
 
           {/* Social proof */}
           <motion.div
-            {...fadeUp(0.78)}
+            {...fadeUp(1.2)}
             className="flex items-center gap-4 mt-10"
           >
             <div className="flex -space-x-2">
@@ -257,17 +265,20 @@ const Hero = () => {
             </div>
             <div>
               <div className="flex gap-0.5 mb-0.5">
-                {[1,2,3,4,5].map(i => <span key={i} className="text-primary text-[0.65rem]">★</span>)}
+                {[1, 2, 3, 4, 5].map(i => <span key={i} className="text-primary text-[0.65rem]">★</span>)}
               </div>
               <p className="text-[0.65rem] text-white/35 tracking-wide">+100 negócios transformados</p>
             </div>
           </motion.div>
         </div>
 
-        {/* Desktop Photo */}
-        <div className="hidden lg:block">
+        {/* Desktop Photo com parallax do mouse */}
+        <motion.div
+          style={{ x: photoX, y: photoY }}
+          className="hidden lg:block"
+        >
           <PhotoBlock />
-        </div>
+        </motion.div>
       </motion.div>
 
       {/* Bottom separator */}

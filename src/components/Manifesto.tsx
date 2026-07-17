@@ -8,7 +8,7 @@ const Manifesto = () => {
   return (
     <section
       ref={ref}
-      className="px-[5vw] py-12 md:py-[10vh] border-t border-white/5 bg-background relative overflow-hidden"
+      className="px-[5vw] py-12 md:py-[10vh] bg-background relative overflow-hidden section-scan section-grid"
     >
       {/* Left accent line */}
       <div className="absolute left-0 top-[10%] bottom-[10%] w-px" aria-hidden="true"
@@ -41,11 +41,10 @@ const Manifesto = () => {
             "
           </div>
           <p className="relative text-[clamp(1.15rem,2.2vw,1.75rem)] font-light leading-[1.7] text-foreground">
-            Seu marketing não precisa parecer ocupado. Precisa produzir{' '}
-            <strong className="font-bold" style={{ color: 'hsl(42 100% 55%)' }}>movimento</strong>.
-            {' '}A gente questiona, mede e executa. Se uma entrega não melhora{' '}
-            <strong className="font-bold" style={{ color: 'hsl(42 100% 55%)' }}>percepção, aquisição ou conversão</strong>,
-            {' '}ela não entra no plano.
+            A maioria das agências aperta botões. Nós entramos no seu negócio, entendemos o cenário real, identificamos os pontos de alavancagem e entregamos soluções que{' '}
+            <strong className="font-bold" style={{ color: 'hsl(42 100% 55%)' }}>somam</strong>.
+            {' '}Não vendemos serviços isolados — vendemos{' '}
+            <strong className="font-bold" style={{ color: 'hsl(42 100% 55%)' }}>transformação de negócio</strong>.
           </p>
         </motion.div>
       </div>
