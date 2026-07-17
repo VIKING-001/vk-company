@@ -4,28 +4,24 @@ import { Plus } from "lucide-react";
 
 const faqs = [
   {
-    q: "Qual o investimento?",
-    a: "Depende do que faz sentido pro seu caso. Depois da primeira conversa, você já sai com uma ideia clara do que seria trabalhado e do custo envolvido. Sem tabela genérica.",
+    q: "Qual é o investimento?",
+    a: "Depende do diagnóstico e do que realmente precisa ser trabalhado. Depois da primeira conversa, você recebe uma direção clara de escopo e custo — sem tabela genérica.",
   },
   {
     q: "Vocês atendem fora de Goiânia?",
-    a: "Sim. Todos os nossos projetos são 100% remotos por padrão. Atendemos clientes em vários estados — o que importa é o negócio, não a localização.",
+    a: "Sim. Os projetos podem ser conduzidos remotamente para clientes em qualquer estado. A localização não muda a proximidade da comunicação nem o rigor do acompanhamento.",
   },
   {
-    q: "Quanto tempo leva pra ver resultado?",
-    a: "Depende do que vamos trabalhar. Tráfego pago: primeiros números aparecem em semanas. Site e branding: o impacto é progressivo. A gente define isso antes de começar, não depois.",
+    q: "Quanto tempo leva para ver resultado?",
+    a: "Cada frente tem um ciclo diferente. Mídia começa a gerar leitura em semanas; site e posicionamento produzem impacto progressivo. As expectativas são definidas antes do início.",
   },
   {
     q: "Preciso ter um negócio grande?",
-    a: "Não. Atendemos desde quem está estruturando o digital pela primeira vez até quem já tem operação rodando mas quer crescer mais rápido. O critério é comprometimento, não tamanho.",
+    a: "Não. Atendemos desde operações estruturando o digital até empresas que querem acelerar uma máquina já ativa. O critério é disposição para executar, medir e evoluir.",
   },
   {
-    q: "Tem contrato de fidelidade?",
-    a: "Não. Trabalhamos por projeto ou em ciclos de 3 meses renováveis. Se não estiver entregando resultado, você não tem obrigação de continuar. Simples assim.",
-  },
-  {
-    q: "Por que vocês e não outra agência?",
-    a: "Essa pergunta você deveria fazer pra qualquer agência antes de contratar. O que a gente oferece é transparência no processo, dedicação real ao seu caso e resultado mensurável. Se depois da conversa não fizer sentido, a gente mesmo vai dizer.",
+    q: "Existe contrato de fidelidade?",
+    a: "Não. O trabalho acontece por projeto ou em ciclos renováveis. A continuidade precisa ser sustentada por entrega e confiança, não por uma trava contratual.",
   },
 ];
 

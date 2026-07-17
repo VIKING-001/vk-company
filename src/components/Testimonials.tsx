@@ -2,19 +2,19 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    quote: "Eu desconfiava bastante no começo — já tinha queimado dinheiro com outra agência antes. Mas o Rodrigo chegou com dados do meu setor e perguntou coisas que o último fornecedor nunca perguntou. Em 60 dias meu custo de captação caiu quase na metade. Renovei sem pensar.",
+    quote: "Eu desconfiava bastante no começo — já tinha queimado dinheiro com outra agência. O Rodrigo chegou com dados do meu setor e perguntou coisas que o último fornecedor nunca perguntou. Em 60 dias, meu custo de captação caiu quase pela metade.",
     name: "João Alves",
     role: "Clínica Dr. Alves — Goiânia",
     initials: "JA",
   },
   {
-    quote: "Meu site tinha 3 anos e eu achava que o problema era o produto. A VK refez a landing page e em duas semanas a taxa de conversão triplicou. Parece mentira mas tenho o print aqui.",
+    quote: "Meu site tinha três anos e eu achava que o problema era o produto. A VK refez a landing page e, em duas semanas, a taxa de conversão triplicou.",
     name: "Mariana Gomes",
     role: "Loja Deitada no Sol — São Paulo",
     initials: "MG",
   },
   {
-    quote: "Passei 8 meses tentando fazer Google Ads funcionar sozinho. Em 30 dias com eles já estava lucrando. O que me chamou atenção foi que eles me ligaram pra pedir uma informação do setor antes de começar. Aí eu soube que estavam fazendo sério.",
+    quote: "Passei oito meses tentando fazer Google Ads funcionar sozinho. Em 30 dias com eles já estava lucrando. O cuidado em entender o setor antes de começar mostrou que era um trabalho sério.",
     name: "Pedro Carvalho",
     role: "PC Reformas — Brasília",
     initials: "PC",

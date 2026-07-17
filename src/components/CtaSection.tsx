@@ -4,10 +4,9 @@ import { CheckCircle } from "lucide-react";
 import { DIAGNOSTICO_LINK } from "../lib/constants";
 
 const features = [
-  "Diagnóstico gratuito na primeira conversa",
-  "Sem contrato de fidelidade",
-  "Proposta só se fizer sentido pro seu caso",
-  "Acompanhamento semanal — não relatório mensal bonito",
+  "Gratuito e sem compromisso",
+  "Menos de 10 minutos",
+  "Direção clara antes de qualquer proposta",
 ];
 
 const CtaSection = () => {
@@ -48,21 +47,21 @@ const CtaSection = () => {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="text-[0.68rem] tracking-[0.28em] uppercase mb-6" style={{ color: 'hsl(42 100% 55%)' }}>
-              Pronto para começar?
+              A próxima decisão pode começar agora.
             </p>
             <h2 className="font-display text-[clamp(2.8rem,6.5vw,5.5rem)] leading-[0.9] mb-8">
-              Se fizer sentido,<br />
+              Descubra onde o seu<br />
               <span style={{
                 background: 'linear-gradient(135deg, #FEC411 0%, #FFD860 60%, #FEC411 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
               }}>
-                a gente começa<br />essa semana.
+                marketing está<br />deixando dinheiro na mesa.
               </span>
             </h2>
             <p className="text-[0.9rem] text-white/60 leading-[1.85] max-w-[340px]">
-              Manda uma mensagem. Se não for o momento certo ou o perfil não se encaixar, a gente fala com honestidade. Sem pitch de venda.
+              Diagnóstico gratuito. Direção real. Sem pitch de venda.
             </p>
 
             {/* Metrics row */}
@@ -132,7 +131,7 @@ const CtaSection = () => {
                 onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 14px 48px rgba(254,196,17,0.55), inset 0 1px 0 rgba(255,255,255,0.25)')}
                 onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 8px 32px rgba(254,196,17,0.35), inset 0 1px 0 rgba(255,255,255,0.2)')}
               >
-                <span className="relative z-10 font-bold">Diagnóstico gratuito</span>
+                <span className="relative z-10 font-bold">Fazer diagnóstico gratuito</span>
                 <span className="relative z-10 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">→</span>
                 {/* Shine */}
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
@@ -141,7 +140,7 @@ const CtaSection = () => {
               </motion.a>
 
               <p className="text-[0.65rem] text-white/45 tracking-wide mt-4 text-center">
-                Leva menos de 10 minutos. Gratuito, sem compromisso.
+                Menos de 10 minutos. Gratuito, sem compromisso.
               </p>
             </div>
           </motion.div>

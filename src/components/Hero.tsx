@@ -38,7 +38,7 @@ function Badge() {
         <div className="relative flex items-center gap-2 border border-primary/25 bg-primary/8 backdrop-blur-sm px-4 py-1.5 rounded-full">
           <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
           <span className="text-[0.65rem] tracking-[0.22em] uppercase text-primary font-medium">
-            Agência Digital Estratégica
+            Estratégia, criação e performance na mesma mesa.
           </span>
         </div>
       </div>
@@ -177,7 +177,7 @@ const Hero = () => {
           {/* Headline */}
           <h1 className="font-display text-[clamp(3.8rem,10vw,8.5rem)] leading-[0.9] tracking-[0.02em]">
             <motion.span {...fadeUp(0.3)} className="block text-white">
-              Seu negócio
+              Marketing que move
             </motion.span>
             <motion.em
               {...fadeUp(0.45)}
@@ -189,8 +189,7 @@ const Hero = () => {
                 backgroundClip: 'text',
               }}
             >
-              merece mais<br />
-              que botões.
+              o caixa. Não o ego.
             </motion.em>
           </h1>
 
@@ -203,7 +202,7 @@ const Hero = () => {
             {...fadeUp(0.55)}
             className="max-w-[480px] mt-8 text-[1rem] font-light leading-[1.85] text-white/65"
           >
-            A maioria das agências entrega layout. A gente estuda o seu mercado, entende onde você está perdendo dinheiro e monta o que vai fazer seu próximo mês ser melhor que o atual.
+            Entramos no seu negócio, encontramos os pontos que travam o crescimento e executamos a estratégia digital que transforma atenção em receita.
           </motion.p>
 
           <motion.div
@@ -226,7 +225,7 @@ const Hero = () => {
               onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 14px 48px rgba(254,196,17,0.5), 0 4px 16px rgba(254,196,17,0.3), inset 0 1px 0 rgba(255,255,255,0.25)')}
               onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 8px 32px rgba(254,196,17,0.3), 0 2px 8px rgba(254,196,17,0.2), inset 0 1px 0 rgba(255,255,255,0.2)')}
             >
-              <span className="relative z-10">Diagnóstico gratuito</span>
+              <span className="relative z-10">Começar diagnóstico</span>
               <span className="relative z-10 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">→</span>
               {/* Shine sweep */}
               <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"

@@ -50,15 +50,15 @@ const About = () => {
         >
           <p className="text-[0.68rem] tracking-[0.25em] uppercase text-primary mb-6">Sobre o fundador</p>
           <h2 className="font-display text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[1.1] mb-8">
-            Estratégia que<br />
-            <span className="text-primary italic">vem da prática.</span>
+            Estratégia com<br />
+            <span className="text-primary italic">responsabilidade.</span>
           </h2>
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-white/70 font-light">
             <p>
-              Trabalhei anos vendo negócios locais perderem clientes por estratégia digital ruim. Não por falta de produto — por falta de direção. Fundei a VK Company porque sabia que dava pra fazer diferente.
+              A VK Company nasceu para dar direção a negócios que tinham produto, mercado e potencial — mas ainda não tinham uma operação digital à altura.
             </p>
             <p>
-              Cada cliente que a gente assume passa por uma conversa honesta primeiro. Se não enxergarmos onde podemos ajudar de verdade, falamos isso antes de qualquer proposta.
+              Rodrigo Cabral fundou a VK Company depois de ver bons negócios perderem clientes não por falta de produto, mas por falta de direção no digital. Por isso, cada projeto começa com uma conversa honesta sobre contexto, números e capacidade de execução. Se a equipe não enxergar uma forma real de ajudar, isso é dito antes de qualquer proposta.
             </p>
             <motion.blockquote
               initial={{ opacity: 0, y: 15 }}
@@ -67,7 +67,7 @@ const About = () => {
               transition={{ delay: 0.4, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
               className="border-l-2 border-primary pl-6 py-2 italic text-white"
             >
-              "Não me interessa ter uma carteira grande de clientes. Me interessa ter uma carteira de clientes que cresceram."
+              "Não queremos uma carteira grande. Queremos uma carteira de clientes que cresceram."
             </motion.blockquote>
           </div>
         </motion.div>
