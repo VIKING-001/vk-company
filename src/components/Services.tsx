@@ -7,29 +7,29 @@ const services = [
     num: "01",
     icon: Target,
     name: "Assessoria Estratégica",
-    desc: "Antes de mexer em qualquer coisa, a gente entende onde você está. O que funciona, o que está sugando verba e o que você ainda não testou. Aí sim, traçamos o caminho.",
+    desc: "Direção para investir no que traz retorno. Antes de mexer em qualquer coisa, entendemos o cenário, o que funciona, o que está sugando verba e o que ainda não foi testado.",
     tags: ["Diagnóstico", "Plano de Ação", "KPIs"],
   },
   {
     num: "02",
     icon: Globe,
     name: "Sites & Landing Pages",
-    desc: "Seu site não é cartão de visita, é um vendedor 24 horas. Criamos páginas com propósito: converter visitante em cliente — não ganhar prêmio de design.",
+    desc: "Uma estrutura digital preparada para vender. Páginas rápidas e persuasivas, construídas em torno da jornada do cliente para transformar visitante em oportunidade real.",
     tags: ["Alta Conversão", "Design Premium", "Performance"],
   },
   {
     num: "03",
     icon: BarChart2,
     name: "Tráfego Pago",
-    desc: "Meta e Google não perdoam verba jogada fora. Configuramos, acompanhamos e ajustamos campanha toda semana — não só no relatório mensal.",
+    desc: "Mídia orientada por margem, não por vaidade. Campanhas em Meta e Google com leitura semanal, testes objetivos e otimização contínua da verba investida.",
     tags: ["Meta Ads", "Google Ads", "ROI Real"],
   },
   {
     num: "04",
     icon: Palette,
-    name: "Identidade Visual & Branding",
-    desc: "Quando a marca é fraca, qualquer texto fica fraco. Construímos identidades que já comunicam antes do cliente ler uma linha.",
-    tags: ["Logo", "Paleta", "Guia de Estilo"],
+    name: "Branding & Identidade",
+    desc: "Uma marca que sustenta percepção e preço. Posicionamento, identidade e linguagem para tornar o negócio reconhecível, coerente e mais valioso.",
+    tags: ["Identidade", "Posicionamento", "Guia de Marca"],
   },
 ];
 
@@ -58,7 +58,7 @@ const Services = () => {
         >
           <p className="text-[0.68rem] tracking-[0.25em] uppercase text-primary mb-3">O que fazemos</p>
           <h2 className="font-display text-[clamp(3rem,7vw,6rem)] tracking-[0.02em] leading-[0.9]">
-            Nossos<br /><span className="text-primary italic">Serviços</span>
+            Estratégia com<br /><span className="text-primary italic">execução.</span>
           </h2>
         </motion.div>
       </div>

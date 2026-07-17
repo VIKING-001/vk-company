@@ -15,7 +15,7 @@ const Footer = () => {
         />
       </div>
       <p className="text-[0.72rem] text-white/30 tracking-[0.08em] uppercase">
-        © {year} VK Company. Todos os direitos reservados.
+        Estratégia · Branding · Performance — © {year} VK Company.
       </p>
     </footer>
   );

@@ -5,26 +5,26 @@ import antolinaCase from "../assets/antolina_case.png";
 
 const cases = [
   {
-    title: "LVII — Street Luxo",
-    description: "A LVII nasceu de um posicionamento claro: democratizar o acesso ao streetwear premium. Desenvolvemos toda a identidade visual, estratégia de marca e funil de vendas — do zero à loja ativa.",
+    title: "LVII — Do zero a uma marca de street luxo pronta para vender.",
+    description: "Posicionamento, identidade visual e estrutura de funil desenvolvidos como uma única operação — da ideia inicial à loja ativa.",
     image: lviiCase,
     metrics: [
       { value: "4", label: "Camadas de funil" },
-      { value: "R$450", label: "Ticket médio" },
-      { value: "100%", label: "Brand do zero" },
+      { value: "R$ 450", label: "Ticket médio" },
+      { value: "Do zero", label: "Brand construída" },
       { value: "Street Luxo", label: "Posicionamento" },
     ],
     tag: "Case E-commerce"
   },
   {
-    title: "Antolina Hotel — Habite a História",
-    description: "Um hotel que une tradição e conforto em um ambiente histórico. Trabalhamos no posicionamento digital e na experiência do cliente, destacando a exclusividade e a herança cultural de suas acomodações.",
+    title: "Antolina Hotel — História transformada em uma experiência digital premium.",
+    description: "Construímos um posicionamento que valoriza herança, exclusividade e conforto, preparando a presença digital para comunicar o valor real da hospedagem.",
     image: antolinaCase,
     metrics: [
-      { value: "Premium", label: "Acomodações" },
-      { value: "Exclusivo", label: "Experiência" },
-      { value: "Histórico", label: "Posicionamento" },
-      { value: "100%", label: "Digital Brand" },
+      { value: "Premium", label: "Posicionamento" },
+      { value: "Reserva", label: "Experiência orientada" },
+      { value: "Própria", label: "Narrativa de marca" },
+      { value: "Herança", label: "Valor percebido" },
     ],
     tag: "Case Hospitalidade"
   }
@@ -58,7 +58,7 @@ const CaseSection = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
                 {/* Text */}
                 <div>
-                  <p className="text-[0.65rem] tracking-[0.22em] uppercase text-primary mb-3">Case de execução</p>
+                  <p className="text-[0.65rem] tracking-[0.22em] uppercase text-primary mb-3">Cases, não promessas.</p>
                   <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] leading-none mb-4">
                     {c.title.split(' — ')[0]} —<br />
                     {c.title.split(' — ')[1]}

@@ -41,10 +41,9 @@ const Manifesto = () => {
             "
           </div>
           <p className="relative text-[clamp(1.15rem,2.2vw,1.75rem)] font-light leading-[1.7] text-foreground">
-            A maioria das agências aperta botões. Nós entramos no seu negócio, entendemos o cenário real, identificamos os pontos de alavancagem e entregamos soluções que{' '}
-            <strong className="font-bold" style={{ color: 'hsl(42 100% 55%)' }}>somam</strong>.
-            {' '}Não vendemos serviços isolados — vendemos{' '}
-            <strong className="font-bold" style={{ color: 'hsl(42 100% 55%)' }}>transformação de negócio</strong>.
+            Seu marketing não precisa parecer ocupado. Precisa{' '}
+            <strong className="font-bold" style={{ color: 'hsl(42 100% 55%)' }}>produzir movimento</strong>.
+            {' '}A gente questiona, mede e executa. Se uma entrega não melhora percepção, aquisição ou conversão, ela não entra no plano.
           </p>
         </motion.div>
       </div>

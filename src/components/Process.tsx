@@ -4,22 +4,22 @@ const steps = [
   {
     num: "01",
     title: "Diagnóstico",
-    desc: "Antes de qualquer proposta, a gente faz as perguntas incômodas: o que você vendeu nos últimos 90 dias, para quem e por que alguns clientes somem.",
+    desc: "Entramos no contexto, nos números e nas restrições do negócio. A proposta começa pela pergunta certa.",
   },
   {
     num: "02",
-    title: "Estratégia",
-    desc: "Com os dados na mão, montamos um plano real — não um deck de apresentação bonito que vai pro fundo da gaveta.",
+    title: "Direção",
+    desc: "Definimos prioridades, metas e o papel de cada frente. Você entende o plano antes de aprovar a execução.",
   },
   {
     num: "03",
     title: "Execução",
-    desc: "Entrega rápida, mas sem atropelamento. Cada entrega passa por revisão interna antes de chegar em você.",
+    desc: "Criação e mídia avançam com ciclos curtos, revisão interna e comunicação direta com quem decide.",
   },
   {
     num: "04",
-    title: "Escala",
-    desc: "Toda campanha e entrega tem número. Se o número não está bom, a gente ajusta. Se está bom, a gente intensifica.",
+    title: "Evolução",
+    desc: "O que funciona ganha escala. O que não responde é corrigido com velocidade e aprendizado documentado.",
   },
 ];
 
@@ -48,7 +48,7 @@ const Process = () => {
         >
           <p className="text-[0.68rem] tracking-[0.25em] uppercase text-primary mb-3">Como trabalhamos</p>
           <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] tracking-[0.02em] leading-[0.9]">
-            Nosso<br /><span className="text-primary italic">Processo</span>
+            Clareza em<br /><span className="text-primary italic">cada etapa.</span>
           </h2>
         </motion.div>
         <motion.p
@@ -58,7 +58,7 @@ const Process = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-[0.88rem] text-white/40 max-w-[280px] leading-relaxed hidden lg:block"
         >
-          Cada etapa existe pra eliminar desperdício — de verba, de tempo e de expectativa.
+          Sem a sensação de que o projeto entrou numa caixa-preta. Você sabe o que está acontecendo, por que e qual é o próximo passo.
         </motion.p>
       </div>
 

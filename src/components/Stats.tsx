@@ -3,9 +3,9 @@ import { useRef, useEffect, useState } from "react";
 
 const stats = [
   { value: 100, suffix: "+", label: "Projetos gerenciados" },
-  { value: 97, suffix: "%", label: "Clientes que renovaram" },
+  { value: 97, suffix: "%", label: "Dos clientes renovaram" },
   { value: 4, suffix: " anos", label: "No mercado digital" },
-  { value: 12, suffix: " nichos", label: "Atendidos até hoje" },
+  { value: 12, suffix: " nichos", label: "Com experiência real" },
 ];
 
 const useCountUp = (target: number, duration: number, active: boolean) => {

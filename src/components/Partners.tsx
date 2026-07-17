@@ -59,8 +59,8 @@ const Partners = () => {
             Parceiros de sucesso
           </p>
           <h2 className="font-display text-[clamp(2rem,5vw,4rem)] leading-[0.95]">
-            Negócios que confiam<br />
-            <span className="text-white/40">no nosso trabalho.</span>
+            Negócios que já confiaram<br />
+            <span className="text-white/40">estratégia e execução à VK Company.</span>
           </h2>
         </motion.div>
 

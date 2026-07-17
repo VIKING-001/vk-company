@@ -40,7 +40,7 @@ function Badge() {
         <div className="relative flex items-center gap-2 border border-primary/25 bg-primary/8 backdrop-blur-sm px-4 py-1.5 rounded-full">
           <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
           <span className="text-[0.65rem] tracking-[0.22em] uppercase text-primary font-medium">
-            Agência Digital Estratégica
+            Estratégia, criação e performance na mesma mesa.
           </span>
         </div>
       </div>
@@ -54,7 +54,7 @@ const PhotoBlock = () => {
       initial={{ opacity: 0, scale: 0.96, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-      className="w-full max-w-[340px] mx-auto lg:max-w-none lg:w-[420px] xl:w-[500px] h-[380px] md:h-[460px] lg:h-[560px] xl:h-[680px] relative flex-shrink-0"
+      className="w-full max-w-[320px] mx-auto aspect-[3/4] lg:max-w-none lg:w-[390px] lg:aspect-[2/3] xl:w-[450px] relative flex-shrink-0"
     >
       {/* Outer glow */}
       <div className="absolute -inset-6 pointer-events-none z-0" aria-hidden="true">
@@ -69,7 +69,7 @@ const PhotoBlock = () => {
         <img
           src={fotoHero}
           alt="Rodrigo Cabral, Founder & CEO da VK Company"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-[center_35%]"
           loading="eager"
         />
         {/* Bottom fade */}
@@ -190,14 +190,14 @@ const Hero = () => {
           {/* Headline */}
           <h1 className="font-display text-[clamp(3.8rem,10vw,8.5rem)] leading-[0.9] tracking-[0.02em]">
             <motion.span {...fadeUp(0.3)} className="block text-white" style={{ textShadow: "0 2px 30px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.5)" }}>
-              Seu negócio
+              Marketing que
             </motion.span>
             <motion.em
               {...fadeUp(0.45)}
               className="not-italic block text-shimmer" style={{ textShadow: "0 2px 30px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.5)" }}
             >
-              merece mais<br />
-              que botões.
+              move o caixa.<br />
+              Não o ego.
             </motion.em>
           </h1>
 
@@ -210,7 +210,7 @@ const Hero = () => {
             {...fadeUp(0.8)}
             className="max-w-[480px] mt-8 text-[1rem] font-light leading-[1.85] text-white/85" style={{ textShadow: "0 1px 20px rgba(0,0,0,0.9)" }}
           >
-            A maioria das agências entrega layout. A gente estuda o seu mercado, entende onde você está perdendo dinheiro e monta o que vai fazer seu próximo mês ser melhor que o atual.
+            Entramos no seu negócio, encontramos os pontos que travam o crescimento e executamos a estratégia digital que transforma atenção em receita.
           </motion.p>
 
           <motion.div
@@ -222,7 +222,7 @@ const Hero = () => {
               href={DIAGNOSTICO_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Iniciar questionário de qualificação"
+              aria-label="Começar diagnóstico"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="relative overflow-hidden inline-flex items-center gap-3 text-primary-foreground font-bold text-[0.8rem] tracking-[0.16em] uppercase px-10 py-5 rounded-sm group"
@@ -233,7 +233,7 @@ const Hero = () => {
               onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 14px 48px rgba(254,196,17,0.5), 0 4px 16px rgba(254,196,17,0.3), inset 0 1px 0 rgba(255,255,255,0.25)')}
               onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 8px 32px rgba(254,196,17,0.3), 0 2px 8px rgba(254,196,17,0.2), inset 0 1px 0 rgba(255,255,255,0.2)')}
             >
-              <span className="relative z-10">Iniciar qualificação</span>
+              <span className="relative z-10">Começar diagnóstico</span>
               <span className="relative z-10 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">→</span>
               {/* Shine sweep */}
               <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
@@ -275,7 +275,7 @@ const Hero = () => {
         {/* Desktop Photo com parallax do mouse */}
         <motion.div
           style={{ x: photoX, y: photoY }}
-          className="hidden lg:block"
+          className="hidden lg:block self-end lg:mb-2"
         >
           <PhotoBlock />
         </motion.div>
