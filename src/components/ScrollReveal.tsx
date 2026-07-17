@@ -93,7 +93,6 @@ const ScrollReveal = ({
         variants={variants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        style={{ willChange: "transform, opacity, filter" }}
       >
         {children}
       </motion.div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, CSSProperties } from "react";
+import React, { useState, useEffect, useRef, CSSProperties } from "react";
 
 export interface CybercoreBackgroundProps {
     streamCount?: number;
@@ -21,6 +21,8 @@ const CybercoreBackground: React.FC<CybercoreBackgroundProps> = ({
     streamCount = DEFAULT_STREAM_COUNT,
 }) => {
     const [streams, setStreams] = useState<DataStream[]>([]);
+    const [isActive, setIsActive] = useState(true);
+    const sceneRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const generated: DataStream[] = Array.from({ length: streamCount }).map((_, i) => {
@@ -41,8 +43,26 @@ const CybercoreBackground: React.FC<CybercoreBackgroundProps> = ({
         setStreams(generated);
     }, [streamCount]);
 
+    useEffect(() => {
+        const scene = sceneRef.current;
+        if (!scene || typeof IntersectionObserver === "undefined") return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => setIsActive(entry.isIntersecting),
+            { rootMargin: "120px 0px" }
+        );
+
+        observer.observe(scene);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <div className="cybercore-scene" role="img" aria-label="Background com fluxo de dados de anuncios e IA">
+        <div
+            ref={sceneRef}
+            className={`cybercore-scene${isActive ? "" : " is-paused"}`}
+            role="img"
+            aria-label="Background com fluxo de dados de anuncios e IA"
+        >
             <div className="cybercore-floor" />
             <div className="cybercore-column" />
             <div className="cybercore-data-container">

@@ -77,7 +77,7 @@ body::before {
 
 /* Smooth scrolling for the entire page */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 @keyframes fadeUp {
@@ -405,6 +405,13 @@ html {
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
+  contain: layout paint style;
+}
+
+.cybercore-scene.is-paused *,
+.cybercore-scene.is-paused *::before,
+.cybercore-scene.is-paused *::after {
+  animation-play-state: paused !important;
 }
 
 /* Piso em perspectiva com grid */

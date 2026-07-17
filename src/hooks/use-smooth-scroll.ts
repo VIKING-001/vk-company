@@ -14,20 +14,31 @@ export const useSmoothScroll = () => {
         if (prefersReducedMotion) return;
 
         const lenis = new Lenis({
-            duration: 1.15,
-            easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             smoothWheel: true,
             wheelMultiplier: 1,
             touchMultiplier: 1.5,
-            lerp: 0.1,
+            lerp: 0.12,
         });
 
         let rafId: number;
+        let running = true;
         const raf = (time: number) => {
             lenis.raf(time);
-            rafId = requestAnimationFrame(raf);
+            if (running) rafId = requestAnimationFrame(raf);
         };
         rafId = requestAnimationFrame(raf);
+
+        const handleVisibilityChange = () => {
+            running = !document.hidden;
+            if (running) {
+                lenis.start();
+                rafId = requestAnimationFrame(raf);
+            } else {
+                cancelAnimationFrame(rafId);
+                lenis.stop();
+            }
+        };
+        document.addEventListener("visibilitychange", handleVisibilityChange);
 
         // Smooth scroll para links âncora
         const handleAnchorClick = (e: MouseEvent) => {
@@ -46,6 +57,7 @@ export const useSmoothScroll = () => {
 
         return () => {
             cancelAnimationFrame(rafId);
+            document.removeEventListener("visibilitychange", handleVisibilityChange);
             document.removeEventListener("click", handleAnchorClick);
             lenis.destroy();
         };
