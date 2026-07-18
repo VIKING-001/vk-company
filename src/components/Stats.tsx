@@ -4,7 +4,6 @@ import { useRef, useEffect, useState } from "react";
 const stats = [
   { value: 100, suffix: "+", label: "Projetos gerenciados" },
   { value: 97, suffix: "%", label: "Dos clientes renovaram" },
-  { value: 4, suffix: " anos", label: "No mercado digital" },
   { value: 12, suffix: " nichos", label: "Com experiência real" },
 ];
 
@@ -60,7 +59,7 @@ const Stats = () => {
         aria-hidden="true"
       />
       <div className="px-[5vw] relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-white/5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/5">
           {stats.map((s, i) => (
             <StatItem key={i} {...s} active={isInView} index={i} />
           ))}
