@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useRef } from "react";
-import logo from "../assets/logo.png";
 import fotoHero from "../assets/foto-perfil.jpg";
 import { DIAGNOSTICO_LINK } from "../lib/constants";
 import MagneticButton from "./MagneticButton";
@@ -39,7 +38,7 @@ function Badge() {
         <div className="absolute inset-0 rounded-full bg-primary/20 blur-md" />
         <div className="relative flex items-center gap-2 border border-primary/25 bg-primary/8 backdrop-blur-sm px-4 py-1.5 rounded-full">
           <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-          <span className="text-[0.65rem] tracking-[0.22em] uppercase text-primary font-medium">
+          <span className="text-center text-[0.65rem] tracking-[0.22em] uppercase text-primary font-medium">
             Estratégia, criação e performance na mesma mesa.
           </span>
         </div>
@@ -138,7 +137,7 @@ const Hero = () => {
       id="inicio"
       aria-label="Seção principal"
       onMouseMove={handleMouseMove}
-      className="min-h-screen flex flex-col justify-end px-[5vw] pb-[8vh] relative overflow-hidden"
+      className="min-h-screen flex flex-col justify-end px-[5vw] pt-4 sm:pt-8 pb-[8vh] lg:pt-0 relative overflow-hidden"
     >
       {/* Background layers */}
       <div className="absolute inset-0 bg-[#0F0F10]" aria-hidden="true">
@@ -172,18 +171,7 @@ const Hero = () => {
         style={{ y, opacity }}
         className="relative flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-24"
       >
-        <div className="flex-1 w-full">
-          {/* Logo */}
-          <motion.div {...fadeUp(0)} className="w-fit mb-8">
-            <img
-              src={logo}
-              alt="VK Company"
-              className="h-[72px] md:h-[90px] w-auto object-contain"
-              style={{ mixBlendMode: 'screen' }}
-              loading="eager"
-            />
-          </motion.div>
-
+        <div className="flex-1 w-full text-center lg:text-left">
           {/* Badge */}
           <Badge />
 
@@ -208,14 +196,14 @@ const Hero = () => {
 
           <motion.p
             {...fadeUp(0.8)}
-            className="max-w-[480px] mt-8 text-[1rem] font-light leading-[1.85] text-white/85" style={{ textShadow: "0 1px 20px rgba(0,0,0,0.9)" }}
+            className="max-w-[480px] mx-auto lg:mx-0 mt-8 text-[1rem] font-light leading-[1.85] text-white/85" style={{ textShadow: "0 1px 20px rgba(0,0,0,0.9)" }}
           >
             Entramos no seu negócio, encontramos os pontos que travam o crescimento e executamos a estratégia digital que transforma atenção em receita.
           </motion.p>
 
           <motion.div
             {...fadeUp(1)}
-            className="flex flex-wrap items-center gap-6 mt-12"
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mt-12"
           >
             {/* Primary CTA */}
             <motion.a
@@ -254,7 +242,7 @@ const Hero = () => {
           {/* Social proof */}
           <motion.div
             {...fadeUp(1.2)}
-            className="flex items-center gap-4 mt-10"
+            className="flex items-center justify-center lg:justify-start gap-4 mt-10"
           >
             <div className="flex -space-x-2">
               {['JA', 'MG', 'PC'].map((initials) => (
@@ -264,7 +252,7 @@ const Hero = () => {
               ))}
             </div>
             <div>
-              <div className="flex gap-0.5 mb-0.5">
+              <div className="flex justify-center lg:justify-start gap-0.5 mb-0.5">
                 {[1, 2, 3, 4, 5].map(i => <span key={i} className="text-primary text-[0.65rem]">★</span>)}
               </div>
               <p className="text-[0.65rem] text-white/35 tracking-wide">+100 negócios transformados</p>

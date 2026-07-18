@@ -49,7 +49,7 @@ const Services = () => {
       aria-label="Nossos serviços"
       className="px-[5vw] py-12 md:py-[10vh] bg-background section-scan section-grid"
     >
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 md:mb-16 gap-4">
+      <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end text-center lg:text-left mb-10 md:mb-16 gap-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,12 +81,12 @@ const Services = () => {
             >
               <TiltCard
                 maxTilt={6}
-                className="bg-secondary p-8 lg:p-10 relative overflow-hidden hover:bg-card hover:shadow-[inset_0_0_50px_rgba(254,196,17,0.05),0_0_0_1px_rgba(254,196,17,0.1)] transition-all duration-300 flex flex-col h-full"
+                className="bg-secondary p-8 lg:p-10 relative overflow-hidden hover:bg-card hover:shadow-[inset_0_0_50px_rgba(254,196,17,0.05),0_0_0_1px_rgba(254,196,17,0.1)] transition-all duration-300 flex flex-col h-full text-center md:text-left"
               >
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500" />
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                <div className="mb-6 w-11 h-11 border border-white/8 flex items-center justify-center group-hover:border-primary/30 group-hover:bg-primary/5 transition-all duration-300">
+                <div className="mb-6 w-11 h-11 mx-auto md:mx-0 border border-white/8 flex items-center justify-center group-hover:border-primary/30 group-hover:bg-primary/5 transition-all duration-300">
                   <Icon size={18} className="text-white/40 group-hover:text-primary transition-colors duration-300" strokeWidth={1.5} />
                 </div>
 
@@ -101,7 +101,7 @@ const Services = () => {
                   {s.desc}
                 </p>
 
-                <div className="flex flex-wrap gap-1.5 mt-6">
+                <div className="flex flex-wrap justify-center md:justify-start gap-1.5 mt-6">
                   {s.tags.map((tag) => (
                     <span
                       key={tag}

@@ -46,6 +46,7 @@ const CtaSection = () => {
             initial={{ opacity: 0, y: 32 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center lg:text-left"
           >
             <p className="text-[0.68rem] tracking-[0.28em] uppercase mb-6" style={{ color: 'hsl(42 100% 55%)' }}>
               A próxima decisão pode começar agora.
@@ -56,16 +57,15 @@ const CtaSection = () => {
                 marketing está deixando<br />dinheiro na mesa.
               </span>
             </h2>
-            <p className="text-[0.9rem] text-white/60 leading-[1.85] max-w-[340px]">
+            <p className="text-[0.9rem] text-white/60 leading-[1.85] max-w-[340px] mx-auto lg:mx-0">
               Gratuito e sem compromisso. Em menos de 10 minutos, você recebe uma direção clara antes de qualquer proposta.
             </p>
 
             {/* Metrics row */}
-            <div className="flex gap-8 mt-10 pt-8 border-t border-white/6">
+            <div className="flex justify-center lg:justify-start gap-8 mt-10 pt-8 border-t border-white/6">
               {[
                 { value: "100+", label: "Projetos" },
                 { value: "97%", label: "Renovaram" },
-                { value: "4 anos", label: "No mercado" },
               ].map((m) => (
                 <div key={m.label}>
                   <p className="font-display text-[1.8rem] leading-none" style={{ color: 'hsl(42 100% 55%)' }}>{m.value}</p>
@@ -103,7 +103,7 @@ const CtaSection = () => {
                     initial={{ opacity: 0, x: -12 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.3 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex items-start gap-3 text-[0.88rem] text-white/75 leading-snug"
+                    className="flex items-start justify-center lg:justify-start text-center lg:text-left gap-3 text-[0.88rem] text-white/75 leading-snug"
                   >
                     <CheckCircle size={14} className="mt-0.5 flex-shrink-0" style={{ color: 'hsl(42 100% 55%)' }} strokeWidth={2} />
                     {f}

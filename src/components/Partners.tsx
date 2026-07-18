@@ -53,7 +53,7 @@ const Partners = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          className="mb-12"
+          className="mb-12 text-center lg:text-left"
         >
           <p className="text-[0.68rem] tracking-[0.25em] uppercase text-primary mb-4">
             Parceiros de sucesso
@@ -75,7 +75,7 @@ const Partners = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-                className={`bg-background p-6 lg:p-8 flex flex-col gap-4 group border-t-0 border-l-0 hover:bg-secondary/40 hover:shadow-[inset_0_0_40px_rgba(254,196,17,0.04),0_0_0_1px_rgba(254,196,17,0.08)] transition-all duration-300`}
+                className={`bg-background p-6 lg:p-8 flex flex-col items-center lg:items-stretch text-center lg:text-left gap-4 group border-t-0 border-l-0 hover:bg-secondary/40 hover:shadow-[inset_0_0_40px_rgba(254,196,17,0.04),0_0_0_1px_rgba(254,196,17,0.08)] transition-all duration-300`}
               >
                 {/* Icon */}
                 <div className={`w-10 h-10 rounded-sm bg-gradient-to-br ${p.color} border ${p.accent} flex items-center justify-center`}>
@@ -96,7 +96,7 @@ const Partners = () => {
                 </div>
 
                 {/* Indicator */}
-                <div className="flex items-center gap-2 pt-2 border-t border-white/5">
+                <div className="flex items-center justify-center lg:justify-start gap-2 pt-2 border-t border-white/5 w-full">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/60" />
                   <span className="text-[0.6rem] tracking-[0.15em] uppercase text-white/45">
                     Cliente ativo

@@ -15,7 +15,7 @@ const Manifesto = () => {
         style={{ background: 'linear-gradient(to bottom, transparent, rgba(254,196,17,0.3), transparent)' }}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_2.2fr] gap-8 md:gap-16 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_2.2fr] gap-8 md:gap-16 items-start text-center md:text-left">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -24,7 +24,7 @@ const Manifesto = () => {
           <p className="text-[0.65rem] tracking-[0.28em] uppercase pt-1" style={{ color: 'hsl(42 100% 55%)' }}>
             Nossa filosofia
           </p>
-          <div className="w-8 h-px mt-4" style={{ background: 'hsl(42 100% 55%)' }} />
+          <div className="w-8 h-px mt-4 mx-auto md:mx-0" style={{ background: 'hsl(42 100% 55%)' }} />
         </motion.div>
 
         <motion.div

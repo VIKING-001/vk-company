@@ -42,7 +42,7 @@ const Testimonials = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-        className="mb-10 md:mb-16"
+        className="mb-10 md:mb-16 text-center md:text-left"
       >
         <p className="text-[0.68rem] tracking-[0.25em] uppercase text-primary mb-3">
           O que dizem sobre nós
@@ -64,7 +64,7 @@ const Testimonials = () => {
           <motion.div
             key={i}
             variants={itemVariants}
-            className="group relative bg-secondary p-8 lg:p-10 hover:bg-card transition-colors duration-300 overflow-hidden flex flex-col"
+            className="group relative bg-secondary p-8 lg:p-10 hover:bg-card transition-colors duration-300 overflow-hidden flex flex-col text-center md:text-left"
           >
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
@@ -72,7 +72,7 @@ const Testimonials = () => {
               "
             </div>
 
-            <div className="flex gap-0.5 mb-5" aria-label="5 estrelas">
+            <div className="flex justify-center md:justify-start gap-0.5 mb-5" aria-label="5 estrelas">
               {Array.from({ length: 5 }).map((_, j) => (
                 <span key={j} className="text-primary text-[0.8rem]">★</span>
               ))}
@@ -82,7 +82,7 @@ const Testimonials = () => {
               {t.quote}
             </p>
 
-            <div className="flex items-center gap-3 pt-7 mt-7 border-t border-white/5">
+            <div className="flex items-center justify-center md:justify-start gap-3 pt-7 mt-7 border-t border-white/5">
               <div className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center font-display text-xs text-primary flex-shrink-0">
                 {t.initials}
               </div>

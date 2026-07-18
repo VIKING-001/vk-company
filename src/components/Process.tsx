@@ -39,7 +39,7 @@ const Process = () => {
       aria-label="Nosso processo de trabalho"
       className="px-[5vw] py-12 md:py-[10vh] bg-background overflow-hidden section-scan section-grid"
     >
-      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12 md:mb-20">
+      <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end text-center lg:text-left gap-6 mb-12 md:mb-20">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -74,7 +74,7 @@ const Process = () => {
           <motion.li
             key={s.num}
             variants={itemVariants}
-            className="group bg-secondary hover:bg-card transition-colors duration-300 p-8 lg:p-10 relative overflow-hidden flex flex-col gap-5"
+            className="group bg-secondary hover:bg-card transition-colors duration-300 p-8 lg:p-10 relative overflow-hidden flex flex-col items-center lg:items-stretch text-center lg:text-left gap-5"
           >
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -93,7 +93,7 @@ const Process = () => {
             </div>
 
             <div
-              className="font-display text-[4rem] leading-none text-white/3 group-hover:text-primary/6 transition-colors duration-300 select-none mt-auto self-end"
+              className="font-display text-[4rem] leading-none text-white/3 group-hover:text-primary/6 transition-colors duration-300 select-none mt-auto self-center lg:self-end"
               aria-hidden="true"
             >
               {s.num}

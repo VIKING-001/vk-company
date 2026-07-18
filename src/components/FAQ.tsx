@@ -41,7 +41,7 @@ const FAQItem = ({ q, a, index }: { q: string; a: string; index: number }) => {
         aria-expanded={open}
         className="w-full flex items-center justify-between gap-6 py-6 text-left group"
       >
-        <span className="text-[1rem] font-semibold text-white/80 group-hover:text-white transition-colors duration-200 leading-snug">
+        <span className="flex-1 text-center lg:text-left text-[1rem] font-semibold text-white/80 group-hover:text-white transition-colors duration-200 leading-snug">
           {q}
         </span>
         <div className={`w-7 h-7 border flex-shrink-0 flex items-center justify-center transition-all duration-300 ${open ? "border-primary bg-primary/10 rotate-45" : "border-white/10 group-hover:border-primary/40"}`}>
@@ -58,7 +58,7 @@ const FAQItem = ({ q, a, index }: { q: string; a: string; index: number }) => {
             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-[0.92rem] leading-[1.85] text-white/70 max-w-[600px]">
+            <p className="pb-6 text-center lg:text-left text-[0.92rem] leading-[1.85] text-white/70 max-w-[600px] mx-auto lg:mx-0">
               {a}
             </p>
           </motion.div>
@@ -80,6 +80,7 @@ const FAQ = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          className="text-center lg:text-left"
         >
           <p className="text-[0.68rem] tracking-[0.25em] uppercase text-primary mb-3">
             Dúvidas comuns

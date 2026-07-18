@@ -57,18 +57,18 @@ const CaseSection = () => {
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
                 {/* Text */}
-                <div>
+                <div className="text-center lg:text-left">
                   <p className="text-[0.65rem] tracking-[0.22em] uppercase text-primary mb-3">Cases, não promessas.</p>
                   <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] leading-none mb-4">
                     {c.title.split(' — ')[0]} —<br />
                     {c.title.split(' — ')[1]}
                   </h2>
-                  <p className="text-[0.9rem] leading-[1.7] text-muted-foreground mb-6 max-w-[500px]">
+                  <p className="text-[0.9rem] leading-[1.7] text-muted-foreground mb-6 max-w-[500px] mx-auto lg:mx-0">
                     {c.description}
                   </p>
                   <dl className="grid grid-cols-2 gap-4">
                     {c.metrics.map((m) => (
-                      <div key={m.label} className="border-l-2 border-primary pl-3">
+                      <div key={m.label} className="border-t-2 lg:border-t-0 lg:border-l-2 border-primary pt-3 lg:pt-0 lg:pl-3 text-center lg:text-left">
                         <dd className="font-display text-[1.6rem] text-primary leading-none">{m.value}</dd>
                         <dt className="text-[0.68rem] text-muted-foreground uppercase tracking-[0.08em] mt-0.5">{m.label}</dt>
                       </div>

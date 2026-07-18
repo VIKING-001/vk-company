@@ -46,7 +46,7 @@ const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}
-          className="order-2 lg:order-2"
+          className="order-2 lg:order-2 text-center lg:text-left"
         >
           <p className="text-[0.68rem] tracking-[0.25em] uppercase text-primary mb-6">Sobre o fundador</p>
           <h2 className="font-display text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[1.1] mb-8">
@@ -65,7 +65,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="border-l-2 border-primary pl-6 py-2 italic text-white"
+              className="border-t-2 lg:border-t-0 lg:border-l-2 border-primary pt-6 lg:pt-2 lg:pl-6 pb-2 italic text-white"
             >
               "Não queremos uma carteira grande. Queremos uma carteira de clientes que cresceram."
             </motion.blockquote>

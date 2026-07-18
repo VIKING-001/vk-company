@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import logo from "../assets/logo.png";
 import { DIAGNOSTICO_LINK } from "../lib/constants";
 import MagneticButton from "./MagneticButton";
 
@@ -39,29 +37,12 @@ const Navbar = () => {
       aria-label="Navegação principal"
       animate={hidden ? { y: "-100%", opacity: 0 } : { y: 0, opacity: 1 }}
       transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-      className={`fixed top-0 left-0 right-0 z-[1000] flex items-center justify-between px-[5vw] will-change-transform ${scrolled
+      className={`fixed top-0 left-0 right-0 z-[1000] flex items-center justify-center md:justify-end px-[5vw] will-change-transform ${scrolled
         ? "py-3 bg-background/90 backdrop-blur-xl border-b border-white/8"
         : "py-6 bg-transparent border-b border-transparent"
         }`}
       style={{ transition: "padding 0.4s ease, background-color 0.4s ease, border-color 0.4s ease" }}
     >
-      <Link
-        to="/"
-        aria-label="VK Company — Página inicial"
-        className="flex items-center shrink-0"
-      >
-        <img
-          src={logo}
-          alt="VK Company"
-          className="w-auto object-contain block"
-          style={{
-            mixBlendMode: 'screen',
-            height: scrolled ? '32px' : '45px',
-            transition: 'height 0.4s ease',
-          }}
-        />
-      </Link>
-
       <div className="flex items-center gap-6 md:gap-8">
         <ul className="hidden md:flex items-center gap-7" role="list">
           {navLinks.map((link) => (
@@ -83,7 +64,7 @@ const Navbar = () => {
           rel="noopener noreferrer"
           aria-label="Fazer diagnóstico gratuito"
           strength={0.25}
-          className="bg-primary text-primary-foreground font-bold text-[0.72rem] md:text-[0.75rem] tracking-[0.14em] uppercase px-5 py-2.5 md:px-7 md:py-3 rounded-sm hover:bg-primary/90 transition-colors duration-200"
+          className="hidden md:inline-flex bg-primary text-primary-foreground font-bold text-[0.75rem] tracking-[0.14em] uppercase px-7 py-3 rounded-sm hover:bg-primary/90 transition-colors duration-200"
         >
           Fazer diagnóstico
         </MagneticButton>
