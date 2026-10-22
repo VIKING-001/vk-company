@@ -2,7 +2,6 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring } from "fram
 import { useRef } from "react";
 import fotoHero from "../assets/foto-perfil.jpg";
 import { DIAGNOSTICO_LINK } from "../lib/constants";
-import MagneticButton from "./MagneticButton";
 import CybercoreBackground from "./ui/cybercore-section-hero";
 
 const fadeUp = (delay = 0) => ({
@@ -22,28 +21,6 @@ function ScanLine() {
       transition={{ duration: 6, repeat: Infinity, repeatDelay: 8, ease: "linear" }}
       aria-hidden="true"
     />
-  );
-}
-
-// Badge flutuante acima do headline
-function Badge() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 12, scale: 0.95 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      className="inline-flex items-center gap-2.5 mb-6"
-    >
-      <div className="relative">
-        <div className="absolute inset-0 rounded-full bg-primary/20 blur-md" />
-        <div className="relative flex items-center gap-2 border border-primary/25 bg-primary/8 backdrop-blur-sm px-4 py-1.5 rounded-full">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-          <span className="text-center text-[0.65rem] tracking-[0.22em] uppercase text-primary font-medium">
-            Estratégia, criação e performance na mesma mesa.
-          </span>
-        </div>
-      </div>
-    </motion.div>
   );
 }
 
@@ -70,6 +47,7 @@ const PhotoBlock = () => {
           alt="Rodrigo Cabral, Founder & CEO da VK Company"
           className="w-full h-full object-cover object-[center_35%]"
           loading="eager"
+          fetchPriority="high"
         />
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-[45%]" style={{
@@ -137,7 +115,7 @@ const Hero = () => {
       id="inicio"
       aria-label="Seção principal"
       onMouseMove={handleMouseMove}
-      className="min-h-screen flex flex-col justify-end px-[5vw] pt-4 sm:pt-8 pb-[8vh] lg:pt-0 relative overflow-hidden"
+      className="min-h-screen flex flex-col justify-end md:justify-start px-[5vw] pt-4 sm:pt-8 md:pt-28 pb-[8vh] relative overflow-hidden"
     >
       {/* Background layers */}
       <div className="absolute inset-0 bg-[#0F0F10]" aria-hidden="true">
@@ -152,7 +130,7 @@ const Hero = () => {
           filter: 'blur(80px)',
         }} />
         {/* Cybercore animated grid background */}
-        <CybercoreBackground streamCount={25} /></div>
+        <CybercoreBackground streamCount={8} /></div>
 
       {/* Vertical grid lines */}
       <div className="absolute inset-0 flex justify-between px-[12.5vw] pointer-events-none" aria-hidden="true">
@@ -172,9 +150,6 @@ const Hero = () => {
         className="relative flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-24"
       >
         <div className="flex-1 w-full text-center lg:text-left">
-          {/* Badge */}
-          <Badge />
-
           {/* Headline */}
           <h1 className="font-display text-[clamp(3.8rem,10vw,8.5rem)] leading-[0.9] tracking-[0.02em]">
             <motion.span {...fadeUp(0.3)} className="block text-white" style={{ textShadow: "0 2px 30px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.5)" }}>
