@@ -151,7 +151,7 @@ const Hero = () => {
       >
         <div className="flex-1 w-full text-center lg:text-left">
           {/* Headline */}
-          <h1 className="font-display text-[clamp(3.8rem,10vw,8.5rem)] leading-[0.9] tracking-[0.02em]">
+          <h1 className="font-display text-[clamp(2.5rem,10.25vw,3.8rem)] leading-[0.9] tracking-[0.02em] md:text-[clamp(3.8rem,10vw,8.5rem)]">
             <motion.span {...fadeUp(0.3)} className="block text-white" style={{ textShadow: "0 2px 30px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.5)" }}>
               Marketing que
             </motion.span>
